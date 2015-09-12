@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/style.css" />
 <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis'
 	rel='stylesheet' type='text/css'>
+	<link type='text/css' href='css/osx.css' rel='stylesheet' media='screen' />
 <!-- The below script Makes IE understand the new html5 tags are there and applies our CSS to it -->
 <!--[if IE]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -44,10 +45,61 @@
 			});
 		});
 	});
+	$(function() {
+		  $("#osx-modal-content").modal({
+		    overlayId: 'osx-overlay',
+		    containerId: 'osx-container',
+		    closeHTML: '<div class="close"><a href="#" class="simplemodal-close">x</a></div>',
+		    minHeight:80,
+		    opacity:65, 
+		    position:['0',],
+		    overlayClose:true,
+		    onOpen:function (d) {
+		      var self = this;
+		      self.container = d.container[0];
+		      d.overlay.fadeIn('slow', function () {
+		        $("#osx-modal-content", self.container).show();
+		        var title = $("#osx-modal-title", self.container);
+		        title.show();
+		        d.container.slideDown('slow', function () {
+		          setTimeout(function () {
+		            var h = $("#osx-modal-data", self.container).height()
+		              + title.height()
+		              + 20; // padding
+		            d.container.animate(
+		              {height: h}, 
+		              200,
+		              function () {
+		                $("div.close", self.container).show();
+		                $("#osx-modal-data", self.container).show();
+		              }
+		            );
+		          }, 300);
+		        });
+		      })
+		    },
+		    onClose:function (d) {
+		      var self = this;
+		      d.container.animate(
+		        {top:"-" + (d.container.height() + 20)},
+		        500,
+		        function () {
+		          self.close(); // or $.modal.close();
+		        }
+		      );
+		    }
+		  });
+		});
+	
+	function showModel(){
+		if(document.getElementById('showModel').value.length > 0){
+		document.getElementById('showosxmodel').click();
+		}
+	}
 </script>
 </head>
-<body>
-	<h1 class="active">${message}</h1>
+<body onLoad="showModel()">
+	<input type="hidden"  name="showModel" id="showModel" value=${message}>
 	<div class="product_wraper">
 		<!---- Main Prodcut_wrapper Start --->
 		<div class="prodcuts_panel">
@@ -88,6 +140,23 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>
+	<section id="buttons">
+		<br style="clear:both;">
+		<input type="hidden"  name="osx" id="showosxmodel" value="" class='osx'>
+		<!-- modal content -->
+		<div id="osx-modal-content">
+			<div id="osx-modal-title">Morning Deals</div>
+			<div class="close"><a href="#" class="simplemodal-close">x</a></div>
+			<div id="osx-modal-data">
+
+				<p>Your Deal is Successfully Uploaded... </p>
+                				<h2>Thanks for Submitting Deal...</h2>
+				<p><button class="simplemodal-close">Close</button> <span>(or press ESC or click the overlay)</span></p>
+			</div>
+		</div><!--- Modal Contetn End --->
+
+        
+</section>
 		</div>
 		<!--- prodcuts_panel end --->
 
@@ -129,6 +198,9 @@
 
 	</div>
 	<!---- Main Prodcut_wrapper end --->
-
+<!-- Load JavaScript files -->
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+<script type='text/javascript' src='js/osx.js'></script>
 </body>
 </html>
