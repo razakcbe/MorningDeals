@@ -53,7 +53,7 @@
 		<div id='nav_menu'>
 			<!---- Nav Menu Start --->
 			<ul>
-				<li class='active'><a href='#'>Home</a></li>
+				<li class='active'><a href='/'>Home</a></li>
 				<li><a href='#'>Deals</a>
 					<ul>
 						<li><a href="#">Electronics</a>
