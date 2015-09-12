@@ -253,11 +253,9 @@ $(function() {
 		<!--- Sidebar Wrapper End --->
 <div class="clr"></div>
 </div><!--- Main Product Wrapper end --->
-
 <!-- Load JavaScript files -->
 <script type='text/javascript' src='js/jquery.js'></script>
 <script type='text/javascript' src='js/jquery.simplemodal.js'></script>
 <script type='text/javascript' src='js/osx.js'></script>
-
 </body>
 </html>
