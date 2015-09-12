@@ -28,8 +28,8 @@ public class DealUtils {
 		String destinationURL = params.get("destinationURL");
 		String categoryId = params.get("categoryId");
 		String vname = params.get("vname");
-		String aprice = params.get("aprice") == null ? "0" : params.get("aprice");
-		String sprice = params.get("sprice") == null ? "0" : params.get("sprice");
+		String aprice = params.get("aprice");
+		String sprice = params.get("sprice");
 		String coupon = params.get("coupon");
 		String hotdealsid = params.get("hotdealsid");
 		String populardealsid = params.get("populardealsid");
