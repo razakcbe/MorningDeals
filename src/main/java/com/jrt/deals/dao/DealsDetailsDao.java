@@ -240,6 +240,10 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 	}
 
 	public void insertUser(UserVO userVO) {
-		
+		log.debug("--> insertUser");
+		log.debug("Query: " + SQLConstants.INSERT_USER);
+		log.debug("Params: " + userVO);
+		getJdbcTemplate().update(SQLConstants.INSERT_USER,userVO.getUserName(),userVO.getUserPwd(),userVO.getUserEmailId(),userVO.getRoleId());
+		log.debug("<-- insertUser");
 	}
 }

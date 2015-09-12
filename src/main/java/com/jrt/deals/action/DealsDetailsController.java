@@ -43,6 +43,18 @@ public class DealsDetailsController {
 		log.debug("<-- getHome:dealDetailsVOs"+dealDetailsVOs);
 		return model;
 	}
+	
+	@RequestMapping(value = "home", method = RequestMethod.GET)
+	public ModelAndView showHome() {
+		log.debug("--> showHome");
+		ModelAndView model = new ModelAndView("home");
+		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllDeals();
+		List<DealDetailsVO> topDealDetailsVOs = dealsDetailsService.findTopDeals();
+		model.addObject("allDeals", dealDetailsVOs);
+		model.addObject("topDeals", topDealDetailsVOs);
+		log.debug("<-- showHome:dealDetailsVOs"+dealDetailsVOs);
+		return model;
+	}
 
 	@RequestMapping(value = "deals", method = RequestMethod.GET)
 	public String getDeals(Model model) {
@@ -98,6 +110,15 @@ public class DealsDetailsController {
 		log.debug("<-- getClearanceDeals");
 		return model;
 	}
+
+	@RequestMapping(value = "travelDeals", method = RequestMethod.GET)
+	public ModelAndView getTravelDeals() {
+		log.debug("--> travelDeals");
+		ModelAndView model = new ModelAndView("home");
+		log.debug("<-- travelDeals");
+		return model;
+	}
+
 	
 	@RequestMapping(value = "postDeal", method = RequestMethod.GET)
 	public String postDeal(Model model) {

@@ -22,13 +22,13 @@
 	<div id="header_top">
 		<!--- Header Top Started --->
 		<div id="topleft">
-			<a href="#">Electronics</a> <a href="#">Mobiles</a> <a href="#">Laptops</a>
-			<a href="#">Televisions</a> <a href="#">Mens</a> <a href="#">Womens</a>
-			<a href="#">Home Furniture</a>
+			<a href="dealsByCateogry?categoryId=10001">Electronics</a> <a href="dealsByCateogry?categoryId=10002">Mobiles</a> <a href="dealsByCateogry?categoryId=10003">Laptops</a>
+			<a href="dealsByCateogry?categoryId=10009">Televisions</a> <a href="dealsByCateogry?categoryId=10014">Mens</a> <a href="dealsByCateogry?categoryId=10025">Womens</a>
+			<a href="dealsByCateogry?categoryId=10046">Home Furniture</a>
 		</div>
 		<div id="topright">
 
-			<a href="login.html">Login / Register</a>
+			<a href="#">Login / Register</a>
 		</div>
 	</div>
 	<!--- Header Top Started --->
@@ -53,121 +53,121 @@
 		<div id='nav_menu'>
 			<!---- Nav Menu Start --->
 			<ul>
-				<li class='active'><a href='/'>Home</a></li>
-				<li><a href='#'>Deals</a>
+				<li class='active'><a href='home'>Home</a></li>
+				<li><a href='deals'>Deals</a>
 					<ul>
-						<li><a href="#">Electronics</a>
+						<li><a href="dealsByCateogry?categoryId=10001">Electronics</a>
 							<ul>
-								<li><a href="index.html">Mobile Accessories</a></li>
-								<li><a href="index.html">Laptops</a></li>
-								<li><a href="index.html">Tablet Accessories</a></li>
-								<li><a href="index.html">Computer Accessories</a></li>
-								<li><a href="index.html">Camera Accessories</a></li>
-								<li><a href="index.html">Audio & Video</a></li>
-								<li><a href="index.html">Gaming</a></li>
-								<li><a href="index.html">Televisions</a></li>
-								<li><a href="index.html">Large Appliances</a></li>
-								<li><a href="index.html">Small Appliances</a></li>
-								<li><a href="index.html">Kitchen Appliances</a></li>
-								<li><a href="index.html">Healthcare Appliances</a></li>
+								<li><a href="dealsByCateogry?categoryId=10002">Mobile Accessories</a></li>
+								<li><a href="dealsByCateogry?categoryId=10003">Laptops</a></li>
+								<li><a href="dealsByCateogry?categoryId=10004">Tablet Accessories</a></li>
+								<li><a href="dealsByCateogry?categoryId=10005">Computer Accessories</a></li>
+								<li><a href="dealsByCateogry?categoryId=10006">Camera Accessories</a></li>
+								<li><a href="dealsByCateogry?categoryId=10007">Audio & Video</a></li>
+								<li><a href="dealsByCateogry?categoryId=10008">Gaming</a></li>
+								<li><a href="dealsByCateogry?categoryId=10009">Televisions</a></li>
+								<li><a href="dealsByCateogry?categoryId=10010">Large Appliances</a></li>
+								<li><a href="dealsByCateogry?categoryId=10011">Small Appliances</a></li>
+								<li><a href="dealsByCateogry?categoryId=10012">Kitchen Appliances</a></li>
+								<li><a href="dealsByCateogry?categoryId=10013">Healthcare Appliances</a></li>
 							</ul></li>
-						<li><a href="#">Men</a>
+						<li><a href="dealsByCateogry?categoryId=10014">Men</a>
 							<ul>
-								<li><a href="index.html">Clothing</a></li>
-								<li><a href="index.html">Footwear</a></li>
-								<li><a href="index.html">Watches</a></li>
-								<li><a href="index.html">Men's Accessories</a></li>
-								<li><a href="index.html">Bags, Belts & Wallets</a></li>
-								<li><a href="index.html">Contact Lenses</a></li>
-								<li><a href="index.html">Sunglasses</a></li>
-								<li><a href="index.html">Spectacle Frames</a></li>
-								<li><a href="index.html">Fragrances</a></li>
-								<li><a href="index.html">Grooming & Wellness</a></li>
+								<li><a href="dealsByCateogry?categoryId=10015">Clothing</a></li>
+								<li><a href="dealsByCateogry?categoryId=10016">Footwear</a></li>
+								<li><a href="dealsByCateogry?categoryId=10017">Watches</a></li>
+								<li><a href="dealsByCateogry?categoryId=10018">Men's Accessories</a></li>
+								<li><a href="dealsByCateogry?categoryId=10019">Bags, Belts & Wallets</a></li>
+								<li><a href="dealsByCateogry?categoryId=10020">Contact Lenses</a></li>
+								<li><a href="dealsByCateogry?categoryId=10021">Sunglasses</a></li>
+								<li><a href="dealsByCateogry?categoryId=10022">Spectacle Frames</a></li>
+								<li><a href="dealsByCateogry?categoryId=10023">Fragrances</a></li>
+								<li><a href="dealsByCateogry?categoryId=10024">Grooming & Wellness</a></li>
 							</ul></li>
-						<li><a href="#">Women</a>
+						<li><a href="dealsByCateogry?categoryId=10025">Women</a>
 							<ul>
-								<li><a href="index.html">Clothing</a></li>
-								<li><a href="index.html">Footwear</a></li>
-								<li><a href="index.html">Watches</a></li>
-								<li><a href="index.html">Jewellery</a></li>
-								<li><a href="index.html">Bags, Belts & Wallets</a></li>
-								<li><a href="index.html">Contact Lenses</a></li>
-								<li><a href="index.html">Sunglasses</a></li>
-								<li><a href="index.html">Spectacle Frames</a></li>
-								<li><a href="index.html">Beauty & Personal Care</a></li>
-								<li><a href="index.html">Perfumes</a></li>
-								<li><a href="index.html">Wellness</a></li>
+								<li><a href="dealsByCateogry?categoryId=10026">Clothing</a></li>
+								<li><a href="dealsByCateogry?categoryId=10027">Footwear</a></li>
+								<li><a href="dealsByCateogry?categoryId=10028">Watches</a></li>
+								<li><a href="dealsByCateogry?categoryId=10029">Jewellery</a></li>
+								<li><a href="dealsByCateogry?categoryId=10030">Bags, Belts & Wallets</a></li>
+								<li><a href="dealsByCateogry?categoryId=10031">Contact Lenses</a></li>
+								<li><a href="dealsByCateogry?categoryId=10032">Sunglasses</a></li>
+								<li><a href="dealsByCateogry?categoryId=10033">Spectacle Frames</a></li>
+								<li><a href="dealsByCateogry?categoryId=10034">Beauty & Personal Care</a></li>
+								<li><a href="dealsByCateogry?categoryId=10035">Perfumes</a></li>
+								<li><a href="dealsByCateogry?categoryId=10036">Wellness</a></li>
 							</ul></li>
-						<li><a href="#">Baby Products</a>
+						<li><a href="dealsByCateogry?categoryId=10037">Baby Products</a>
 							<ul>
-								<li><a href="index.html">Clothing</a></li>
-								<li><a href="index.html">Footwear</a></li>
-								<li><a href="index.html">Toys</a></li>
-								<li><a href="index.html">Baby Care</a></li>
-								<li><a href="index.html">School Supplies</a></li>
-								<li><a href="index.html">Kids Sports</a></li>
-								<li><a href="index.html">Watches</a></li>
-								<li><a href="index.html">Books</a></li>
-								<li><a href="index.html">Movies</a></li>
-								<li><a href="index.html">Sunglasses</a></li>
+								<li><a href="dealsByCateogry?categoryId=10038">Clothing</a></li>
+								<li><a href="dealsByCateogry?categoryId=10039">Footwear</a></li>
+								<li><a href="dealsByCateogry?categoryId=10040">Toys</a></li>
+								<li><a href="dealsByCateogry?categoryId=10041">Baby Care</a></li>
+								<li><a href="dealsByCateogry?categoryId=10042">School Supplies</a></li>
+								<li><a href="dealsByCateogry?categoryId=10043">Kids Sports</a></li>
+								<li><a href="dealsByCateogry?categoryId=10044">Watches</a></li>
+								<li><a href="dealsByCateogry?categoryId=10045">Books</a></li>
+								<li><a href="dealsByCateogry?categoryId=10046">Movies</a></li>
+								<li><a href="dealsByCateogry?categoryId=10047">Sunglasses</a></li>
 							</ul></li>
 
-						<li><a href="#">Home Products</a>
+						<li><a href="dealsByCateogry?categoryId=10048">Home Products</a>
 							<ul>
-								<li><a href="index.html">Kitchen & Dining</a></li>
-								<li><a href="index.html">Home Furnishing</a></li>
-								<li><a href="index.html">Home Appliances</a></li>
-								<li><a href="index.html">Kitchen Appliances</a></li>
-								<li><a href="index.html">Furniture</a></li>
-								<li><a href="index.html">Tools & Hardware</a></li>
-								<li><a href="index.html">Home Specials</a></li>
-								<li><a href="index.html">Bath Essential</a></li>
-								<li><a href="index.html">Household Supplies</a></li>
-								<li><a href="index.html">Housekeeping & Laundry</a></li>
-								<li><a href="index.html">Pet Supplies</a></li>
+								<li><a href="dealsByCateogry?categoryId=10049">Kitchen & Dining</a></li>
+								<li><a href="dealsByCateogry?categoryId=10050">Home Furnishing</a></li>
+								<li><a href="dealsByCateogry?categoryId=10051">Home Appliances</a></li>
+								<li><a href="dealsByCateogry?categoryId=10052">Kitchen Appliances</a></li>
+								<li><a href="dealsByCateogry?categoryId=10053">Furniture</a></li>
+								<li><a href="dealsByCateogry?categoryId=10054">Tools & Hardware</a></li>
+								<li><a href="dealsByCateogry?categoryId=10055">Home Specials</a></li>
+								<li><a href="dealsByCateogry?categoryId=10056">Bath Essential</a></li>
+								<li><a href="dealsByCateogry?categoryId=10057">Household Supplies</a></li>
+								<li><a href="dealsByCateogry?categoryId=10058">Housekeeping & Laundry</a></li>
+								<li><a href="dealsByCateogry?categoryId=10059">Pet Supplies</a></li>
 							</ul></li>
-						<li><a href="#">Books & Media</a>
+						<li><a href="dealsByCateogry?categoryId=10060">Books & Media</a>
 							<ul>
-								<li><a href="index.html">Books</a></li>
-								<li><a href="index.html">eLearning</a></li>
-								<li><a href="index.html">eBooks & ePrints</a></li>
-								<li><a href="index.html">Music</a></li>
-								<li><a href="index.html">Movies & TV Shows</a></li>
-								<li><a href="index.html">Gaming</a></li>
-								<li><a href="index.html">Stationary</a></li>
-								<li><a href="index.html">Office Equipments</a></li>
-								<li><a href="index.html">Exam Supplies</a></li>
+								<li><a href="dealsByCateogry?categoryId=10061">Books</a></li>
+								<li><a href="dealsByCateogry?categoryId=10062">eLearning</a></li>
+								<li><a href="dealsByCateogry?categoryId=10063">eBooks & ePrints</a></li>
+								<li><a href="dealsByCateogry?categoryId=10064">Music</a></li>
+								<li><a href="dealsByCateogry?categoryId=10065">Movies & TV Shows</a></li>
+								<li><a href="dealsByCateogry?categoryId=10066">Gaming</a></li>
+								<li><a href="dealsByCateogry?categoryId=10067">Stationary</a></li>
+								<li><a href="dealsByCateogry?categoryId=10068">Office Equipments</a></li>
+								<li><a href="dealsByCateogry?categoryId=10069">Exam Supplies</a></li>
 							</ul></li>
-						<li><a href="#">Sports</a>
+						<li><a href="dealsByCateogry?categoryId=10070">Sports</a>
 							<ul>
-								<li><a href="index.html">Sports Clothing</a></li>
-								<li><a href="index.html">Sports Footwear</a></li>
-								<li><a href="index.html">Fitness & BodyBuilding</a></li>
-								<li><a href="index.html">Cardio Equipments</a></li>
-								<li><a href="index.html">Sports</a></li>
-								<li><a href="index.html">Outdoors</a></li>
+								<li><a href="dealsByCateogry?categoryId=10071">Sports Clothing</a></li>
+								<li><a href="dealsByCateogry?categoryId=10072">Sports Footwear</a></li>
+								<li><a href="dealsByCateogry?categoryId=10073">Fitness & BodyBuilding</a></li>
+								<li><a href="dealsByCateogry?categoryId=10074">Cardio Equipments</a></li>
+								<li><a href="dealsByCateogry?categoryId=10075">Sports</a></li>
+								<li><a href="dealsByCateogry?categoryId=10076">Outdoors</a></li>
 							</ul></li>
-						<li><a href="#">BIke & Car Spares</a>
+						<li><a href="dealsByCateogry?categoryId=10077">BIke & Car Spares</a>
 							<ul>
-								<li><a href="index.html">Car Essentials</a></li>
-								<li><a href="index.html">Bike Essentials</a></li>
-								<li><a href="index.html">Car Electronics</a></li>
-								<li><a href="index.html">Tyres</a></li>
-								<li><a href="index.html">Lighting</a></li>
-								<li><a href="index.html">Styling</a></li>
-								<li><a href="index.html">Spares & Equipment</a></li>
-								<li><a href="index.html">Lubricants & Oils</a></li>
-								<li><a href="index.html">Helmets</a></li>
-								<li><a href="index.html">Vehicle Covers</a></li>
-								<li><a href="index.html">Washing & Cleaning</a></li>
-								<li><a href="index.html">Breakdown Equipment</a></li>
-								<li><a href="index.html">Car Freshness</a></li>
+								<li><a href="dealsByCateogry?categoryId=10078">Car Essentials</a></li>
+								<li><a href="dealsByCateogry?categoryId=10079">Bike Essentials</a></li>
+								<li><a href="dealsByCateogry?categoryId=10080">Car Electronics</a></li>
+								<li><a href="dealsByCateogry?categoryId=10081">Tyres</a></li>
+								<li><a href="dealsByCateogry?categoryId=10082">Lighting</a></li>
+								<li><a href="dealsByCateogry?categoryId=10083">Styling</a></li>
+								<li><a href="dealsByCateogry?categoryId=10084">Spares & Equipment</a></li>
+								<li><a href="dealsByCateogry?categoryId=10085">Lubricants & Oils</a></li>
+								<li><a href="dealsByCateogry?categoryId=10086">Helmets</a></li>
+								<li><a href="dealsByCateogry?categoryId=10087">Vehicle Covers</a></li>
+								<li><a href="dealsByCateogry?categoryId=10088">Washing & Cleaning</a></li>
+								<li><a href="dealsByCateogry?categoryId=10089">Breakdown Equipment</a></li>
+								<li><a href="dealsByCateogry?categoryId=10090">Car Freshness</a></li>
 							</ul></li>
 					</ul></li>
-				<li><a href='#'>Coupons</a></li>
-				<li><a href='#'>Hot Deals</a></li>
-				<li><a href='#'>Travel Deals</a></li>
-				<li><a href='#'>Clearance Sales</a></li>
+				<li><a href='cupons'>Coupons</a></li>
+				<li><a href='hotDeals'>Hot Deals</a></li>
+				<li><a href='travelDeals'>Travel Deals</a></li>
+				<li><a href='clearanceDeals'>Clearance Sales</a></li>
 				<li><a href="postDeal">Submit Deal</a></li>
 				<li style="float: right;">
 					<form>

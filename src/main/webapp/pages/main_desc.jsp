@@ -39,7 +39,9 @@
 				<div id="description">
 					<!--- Decription Start --->
 					<h1>${dealDetailsVO.productName}</h1>
-					<strong id="price"><span>previously &#8360;${dealDetailsVO.actualPrice}</span> &#8360;${dealDetailsVO.salePrice}</strong>
+					<strong id="price"><span>previously
+							&#8360;${dealDetailsVO.actualPrice}</span>
+						&#8360;${dealDetailsVO.salePrice}</strong>
 					${dealDetailsVO.productDescription}
 					<p>
 						<button type="submit" class="buynow">Buy Now</button>
@@ -57,7 +59,7 @@
 		</div>
 		<!--- prodcuts_panel end --->
 
-				<div class="sidebar_wrapper">
+		<div class="sidebar_wrapper">
 			<!--- Sidebar Wrapper Start--->
 
 			<div class="sidebar_panel">
@@ -78,8 +80,9 @@
 								<a href="productDesc?productId=${listValue.productId}">&#8360;.${listValue.salePrice}</a>
 							</div>
 							<div class="side_price_right">
-							<a href="productDesc?productId=${listValue.productId}">Buy Now</a>
-						</div>
+								<a href="productDesc?productId=${listValue.productId}">Buy
+									Now</a>
+							</div>
 						</div>
 						<div id="hline"></div>
 					</c:forEach>
@@ -101,168 +104,25 @@
 			<div id="related_prod" class="scroll_horizontal">
 				<div class="box">
 					<ul class="slist">
+					<c:forEach var="listValue" items="${relatedDeals}">
 						<li>
-							<div
-								style="background: #FFF; width: 182px; height: auto; color: #0096d6;">
-								<!--- Product list start--->
-								<a href="prod-desc.html"><img src="images/marker.jpg"
-									alt="Teewe 2 Wireless HDMI Media Streaming Player" /></a> <a
-									href="prod-desc.html" class="product_name">Teewe 2 Wireless
-									HDMI Media Streaming Player</a>
-								<div class="price_tag">
-									<div class="price_left">
-										<a href="prod-desc.html">M.R.P &#8377;2399</a>
+							<div>
+								<style="background: #FFF; width: 182px; height: 300px; color: #0096d6;">
+									<a href="#"><img src="${listValue.imageUrl}"
+										alt="${listValue.productName}" /></a>
+									<a href="#" class="product_name">${listValue.productName}</a>
+									<div class="price_tag">
+										<div class="price_left">
+											<a href="prod-desc.html">M.R.P &#8377;${listValue.salePrice}</a>
+										</div>
+										<div class="price_right">
+											<a href="#">&#8377;${listValue.salePrice}</a>
+										</div>
 									</div>
-									<div class="price_right">
-										<a href="prod-desc.html">&#8377;1899</a>
-									</div>
-								</div>
-								<a href="prod-desc.html" class="see_deal">Buy Now</strong></a>
+									<a href="productDesc?productId=${listValue.productId}" class="see_deal">Buy Now</strong></a>
 							</div>
-							<!--- Product List End --->
 						</li>
-						<li>
-							<div
-								style="background: #FFF; width: 182px; height: auto; color: #0096d6;">
-								<!--- Product list start--->
-								<a href="prod-desc.html"><img src="images/marker.jpg"
-									alt="Teewe 2 Wireless HDMI Media Streaming Player" /></a> <a
-									href="prod-desc.html" class="product_name">Teewe 2 Wireless
-									HDMI Media Streaming Player</a>
-								<div class="price_tag">
-									<div class="price_left">
-										<a href="prod-desc.html">M.R.P &#8377;2399</a>
-									</div>
-									<div class="price_right">
-										<a href="prod-desc.html">&#8377;1899</a>
-									</div>
-								</div>
-								<a href="prod-desc.html" class="see_deal">Buy Now</strong></a>
-							</div>
-							<!--- Product List End --->
-						</li>
-						<li>
-							<div
-								style="background: #FFF; width: 182px; height: auto; color: #0096d6;">
-								<!--- Product list start--->
-								<a href="prod-desc.html"><img src="images/marker.jpg"
-									alt="Teewe 2 Wireless HDMI Media Streaming Player" /></a> <a
-									href="prod-desc.html" class="product_name">Teewe 2 Wireless
-									HDMI Media Streaming Player</a>
-								<div class="price_tag">
-									<div class="price_left">
-										<a href="prod-desc.html">M.R.P &#8377;2399</a>
-									</div>
-									<div class="price_right">
-										<a href="prod-desc.html">&#8377;1899</a>
-									</div>
-								</div>
-								<a href="prod-desc.html" class="see_deal">Buy Now</strong></a>
-							</div>
-							<!--- Product List End --->
-						</li>
-						<li>
-							<div
-								style="background: #FFF; width: 182px; height: auto; color: #0096d6;">
-								<!--- Product list start--->
-								<a href="prod-desc.html"><img src="images/marker.jpg"
-									alt="Teewe 2 Wireless HDMI Media Streaming Player" /></a> <a
-									href="prod-desc.html" class="product_name">Teewe 2 Wireless
-									HDMI Media Streaming Player</a>
-								<div class="price_tag">
-									<div class="price_left">
-										<a href="prod-desc.html">M.R.P &#8377;2399</a>
-									</div>
-									<div class="price_right">
-										<a href="prod-desc.html">&#8377;1899</a>
-									</div>
-								</div>
-								<a href="prod-desc.html" class="see_deal">Buy Now</strong></a>
-							</div>
-							<!--- Product List End --->
-						</li>
-						<li>
-							<div
-								style="background: #FFF; width: 182px; height: auto; color: #0096d6;">
-								<!--- Product list start--->
-								<a href="prod-desc.html"><img src="images/marker.jpg"
-									alt="Teewe 2 Wireless HDMI Media Streaming Player" /></a> <a
-									href="prod-desc.html" class="product_name">Teewe 2 Wireless
-									HDMI Media Streaming Player</a>
-								<div class="price_tag">
-									<div class="price_left">
-										<a href="prod-desc.html">M.R.P &#8377;2399</a>
-									</div>
-									<div class="price_right">
-										<a href="prod-desc.html">&#8377;1899</a>
-									</div>
-								</div>
-								<a href="prod-desc.html" class="see_deal">Buy Now</strong></a>
-
-							</div>
-							<!--- Product List End --->
-						</li>
-						<li>
-							<div
-								style="background: #FFF; width: 182px; height: auto; color: #0096d6;">
-								<!--- Product list start--->
-								<a href="prod-desc.html"><img src="images/marker.jpg"
-									alt="Teewe 2 Wireless HDMI Media Streaming Player" /></a> <a
-									href="prod-desc.html" class="product_name">Teewe 2 Wireless
-									HDMI Media Streaming Player</a>
-								<div class="price_tag">
-									<div class="price_left">
-										<a href="prod-desc.html">M.R.P &#8377;2399</a>
-									</div>
-									<div class="price_right">
-										<a href="prod-desc.html">&#8377;1899</a>
-									</div>
-								</div>
-								<a href="prod-desc.html" class="see_deal">Buy Now</strong></a>
-							</div>
-							<!--- Product List End --->
-						</li>
-						<li>
-							<div
-								style="background: #FFF; width: 182px; height: auto; color: #0096d6;">
-								<!--- Product list start--->
-								<a href="prod-desc.html"><img src="images/marker.jpg"
-									alt="Teewe 2 Wireless HDMI Media Streaming Player" /></a> <a
-									href="prod-desc.html" class="product_name">Teewe 2 Wireless
-									HDMI Media Streaming Player</a>
-								<div class="price_tag">
-									<div class="price_left">
-										<a href="prod-desc.html">M.R.P &#8377;2399</a>
-									</div>
-									<div class="price_right">
-										<a href="prod-desc.html">&#8377;1899</a>
-									</div>
-								</div>
-								<a href="prod-desc.html" class="see_deal">Buy Now</strong></a>
-							</div>
-							<!--- Product List End --->
-						</li>
-						<li>
-							<div
-								style="background: #FFF; width: 182px; height: auto; color: #0096d6;">
-								<!--- Product list start--->
-								<a href="prod-desc.html"><img src="images/marker.jpg"
-									alt="Teewe 2 Wireless HDMI Media Streaming Player" /></a> <a
-									href="prod-desc.html" class="product_name">Teewe 2 Wireless
-									HDMI Media Streaming Player</a>
-								<div class="price_tag">
-									<div class="price_left">
-										<a href="prod-desc.html">M.R.P &#8377;2399</a>
-									</div>
-									<div class="price_right">
-										<a href="prod-desc.html">&#8377;1899</a>
-									</div>
-								</div>
-								<a href="prod-desc.html" class="see_deal">Buy Now</strong></a>
-							</div>
-							<!--- Product List End --->
-						</li>
-
+					</c:forEach>
 					</ul>
 				</div>
 			</div>
@@ -272,12 +132,11 @@
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/jquery.cxscroll.min.js"></script>
 		<script>
-
-$('#related_prod').cxScroll({
-	direction: 'left',
-	step: 3
-});
-</script>
+			$('#related_prod').cxScroll({
+				direction : 'left',
+				step : 3
+			});
+		</script>
 
 
 	</div>

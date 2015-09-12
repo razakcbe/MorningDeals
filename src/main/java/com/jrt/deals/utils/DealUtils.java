@@ -51,12 +51,11 @@ public class DealUtils {
 
 	public static UserVO getUserVO(Map<String, String> allRequestParams) {
 		UserVO userVO = new UserVO();
-		String uName = allRequestParams.get("uName");
-		String emailId = allRequestParams.get("emailId");
-		String roleId = allRequestParams.get("roleId");
-		userVO.setUserName(uName);
+		String emailId = allRequestParams.get("email");
+		userVO.setUserName(emailId);
 		userVO.setUserEmailId(emailId);
-		userVO.setRoleId(new Integer(roleId));
+		userVO.setRoleId(1002);
+		userVO.setUserPwd("dummy");
 		return userVO;
 	}
 }
