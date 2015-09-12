@@ -57,113 +57,37 @@
 		</div>
 		<!--- prodcuts_panel end --->
 
-		<div class="sidebar_wrapper">
+				<div class="sidebar_wrapper">
 			<!--- Sidebar Wrapper Start--->
+
 			<div class="sidebar_panel">
 				<!--- sidebar_panel Start --->
 				<h2>Top Deals</h2>
 				<div class="side_content_pane">
-					<!--- Side Content Pane Start --->
-					<a href="prod-desc.html" class="product_name">Teewe 2 Wireless
-						HDMI Media Streaming Player</a><br />
-					<div class="side_price_tag">
-						<!--- Side Price Tag Start -->
-						<div class="side_price_left">
-							<a href="prod-desc.html">M.R.P &#8377;2399</a>
-						</div>
-						<div class="side_price_middle">
-							<a href="prod-desc.html">&#8377;1899</a>
-						</div>
-						<div class="side_price_right">
-							<a href="prod-desc.html">Buy Now</a>
-						</div>
-					</div>
-					<!--- Side Price Tag End --->
-					<div id="hline"></div>
-					<a href="prod-desc.html" class="product_name">Teewe 2 Wireless
-						HDMI Media Streaming Player</a><br />
-					<div class="side_price_tag">
-						<!--- Side Price Tag Start -->
-						<div class="side_price_left">
-							<a href="prod-desc.html">M.R.P &#8377;2399</a>
-						</div>
-						<div class="side_price_middle">
-							<a href="prod-desc.html">&#8377;1899</a>
-						</div>
-						<div class="side_price_right">
-							<a href="prod-desc.html">Buy Now</a>
-						</div>
-					</div>
-					<!--- Side Price Tag End --->
-					<div id="hline"></div>
-					<a href="prod-desc.html" class="product_name">Teewe 2 Wireless
-						HDMI Media Streaming Player</a><br />
-					<div class="side_price_tag">
-						<!--- Side Price Tag Start -->
-						<div class="side_price_left">
-							<a href="prod-desc.html">M.R.P &#8377;2399</a>
-						</div>
-						<div class="side_price_middle">
-							<a href="prod-desc.html">&#8377;1899</a>
-						</div>
-						<div class="side_price_right">
-							<a href="prod-desc.html">Buy Now</a>
-						</div>
-					</div>
-					<!--- Side Price Tag End --->
-					<div id="hline"></div>
-					<a href="prod-desc.html" class="product_name">Teewe 2 Wireless
-						HDMI Media Streaming Player</a><br />
-					<div class="side_price_tag">
-						<!--- Side Price Tag Start -->
-						<div class="side_price_left">
-							<a href="prod-desc.html">M.R.P &#8377;2399</a>
-						</div>
-						<div class="side_price_middle">
-							<a href="prod-desc.html">&#8377;1899</a>
-						</div>
-						<div class="side_price_right">
-							<a href="prod-desc.html">Buy Now</a>
-						</div>
-					</div>
-					<!--- Side Price Tag End --->
-					<div id="hline"></div>
-					<a href="prod-desc.html" class="product_name">Teewe 2 Wireless
-						HDMI Media Streaming Player</a><br />
-					<div class="side_price_tag">
-						<!--- Side Price Tag Start -->
-						<div class="side_price_left">
-							<a href="prod-desc.html">M.R.P &#8377;2399</a>
-						</div>
-						<div class="side_price_middle">
-							<a href="prod-desc.html">&#8377;1899</a>
-						</div>
-						<div class="side_price_right">
-							<a href="prod-desc.html">Buy Now</a>
-						</div>
-					</div>
-					<!--- Side Price Tag End --->
-					<div id="hline"></div>
-					<a href="prod-desc.html" class="product_name">Teewe 2 Wireless
-						HDMI Media Streaming Player</a><br />
-					<div class="side_price_tag">
-						<!--- Side Price Tag Start -->
-						<div class="side_price_left">
-							<a href="prod-desc.html">M.R.P &#8377;2399</a>
-						</div>
-						<div class="side_price_middle">
-							<a href="prod-desc.html">&#8377;1899</a>
-						</div>
-						<div class="side_price_right">
-							<a href="prod-desc.html">Buy Now</a>
-						</div>
-					</div>
-					<!--- Side Price Tag End --->
 
+					<c:forEach var="listValue" items="${topDeals}">
+						<a href="productDesc?productId=${listValue.productId}"
+							class="product_name">${listValue.productName}</a>
+						<br />
+						<div class="side_price_tag">
+							<div class="side_price_left">
+								<a href="productDesc?productId=${listValue.productId}">M.R.P
+									&#8360;.${listValue.actualPrice}</a>
+							</div>
+							<div class="side_price_middle">
+								<a href="productDesc?productId=${listValue.productId}">&#8360;.${listValue.salePrice}</a>
+							</div>
+							<div class="side_price_right">
+							<a href="productDesc?productId=${listValue.productId}">Buy Now</a>
+						</div>
+						</div>
+						<div id="hline"></div>
+					</c:forEach>
 				</div>
-				<!--- Side content pane end --->
 			</div>
 			<!--- Sidebar_panel End --->
+
+
 		</div>
 		<!--- Sidebar Wrapper End --->
 

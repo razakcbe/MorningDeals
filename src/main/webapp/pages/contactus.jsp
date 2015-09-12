@@ -19,7 +19,7 @@
         
 <div class="content_wrapper">
 <h1>Get in Touch</h1>
-<div class="contact_wrapper" style="margin-left: -178px;">	
+<div class="contact_wrapper" style="margin-left: -178px;">
 	<form class="form-style-9">
 <ul>
 <li>

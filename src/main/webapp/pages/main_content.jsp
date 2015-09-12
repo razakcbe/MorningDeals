@@ -103,14 +103,17 @@
 						<a href="productDesc?productId=${listValue.productId}"
 							class="product_name">${listValue.productName}</a>
 						<br />
-						<div class="price_tag">
-							<div class="price_left">
+						<div class="side_price_tag">
+							<div class="side_price_left">
 								<a href="productDesc?productId=${listValue.productId}">M.R.P
 									&#8360;.${listValue.actualPrice}</a>
 							</div>
-							<div class="price_right">
+							<div class="side_price_middle">
 								<a href="productDesc?productId=${listValue.productId}">&#8360;.${listValue.salePrice}</a>
 							</div>
+							<div class="side_price_right">
+							<a href="productDesc?productId=${listValue.productId}">Buy Now</a>
+						</div>
 						</div>
 						<div id="hline"></div>
 					</c:forEach>
