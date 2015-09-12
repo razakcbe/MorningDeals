@@ -79,4 +79,25 @@ public class DealsDetailsService {
 		log.debug("--> insertUser");
 	}
 
+	public List<DealDetailsVO> findAllHotDeals() {
+		log.debug("--> findAllHotDeals");
+		List<DealDetailsVO> dealDetailsVOList = dealsDetailsDao.findAllHotDeals();
+		log.debug("<-- findAllHotDeals");
+		return dealDetailsVOList;
+	}
+
+	public List<DealDetailsVO> findAllClearanceDeals() {
+		log.debug("--> findAllClearanceDeals");
+		List<DealDetailsVO> dealDetailsVOList = dealsDetailsDao.findAllClearanceDeals();
+		log.debug("<-- findAllClearanceDeals");
+		return dealDetailsVOList;
+	}
+
+	public List<DealDetailsVO> findAllTraveleDeals() {
+		log.debug("--> findAllTraveleDeals");
+		List<DealDetailsVO> dealDetailsVOList = dealsDetailsDao.findAllTravelDeals();
+		log.debug("<-- findAllTraveleDeals");
+		return dealDetailsVOList;
+	}
+
 }

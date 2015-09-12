@@ -16,4 +16,7 @@ public interface IDealsDetailsDao {
 	public List<DealDetailsVO> findTopDeals();
 	public List<DealDetailsVO> findRelatedDeals(String productId);
 	public void insertUser(UserVO userVO);
+	public List<DealDetailsVO> findAllHotDeals();
+	public List<DealDetailsVO> findAllClearanceDeals();
+	public List<DealDetailsVO> findAllTravelDeals();
 }

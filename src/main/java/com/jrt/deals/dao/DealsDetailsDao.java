@@ -60,30 +60,9 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		log.debug("Query: " + SQLConstants.SELECT_DEALS_DETAILS);
 		List<Map<String, Object>> rows = getJdbcTemplate().queryForList(
 				SQLConstants.SELECT_DEALS_DETAILS + " PRODUCT_ID=" + dealId);
-		DealDetailsVO dealDetailsVO = new DealDetailsVO();
+		DealDetailsVO dealDetailsVO =null;
 		for (Map<String, Object> row : rows) {
-			dealDetailsVO.setProductId((Integer) row.get("PRODUCT_ID"));
-			dealDetailsVO.setCategoryId((Integer) row.get("CATEGORY_ID"));
-			dealDetailsVO.setProductName((String) row.get("PRODUCT_NAME"));
-			dealDetailsVO.setProductDescription((String) row
-					.get("PRODUCT_DETAILS"));
-			dealDetailsVO.setImageUrl((String) row.get("PRODUCT_IMAGE_URL"));
-			dealDetailsVO.setDealUrl((String) row.get("PRODUCT_DEAL_URL"));
-			dealDetailsVO.setVendorName((String) row.get("PRODUCT_VENDOR"));
-			dealDetailsVO.setActualPrice((BigDecimal) row
-					.get("PRODUCT_ACTUAL_PRICE"));
-			dealDetailsVO.setSalePrice((BigDecimal) row
-					.get("PRODUCT_SALE_PRICE"));
-			dealDetailsVO.setCuponCode((String) row.get("PRODUCT_COUPON"));
-			dealDetailsVO.setStatus((String) row.get("PRODUCT_POST_STATUS"));
-			dealDetailsVO.setHotDeal((String) row.get("PRODUCT_HOT_DEAL"));
-			dealDetailsVO.setPopularDeal((String) row
-					.get("PRODUCT_POPULAR_DEAL"));
-			dealDetailsVO.setClearanceDeal((String) row
-					.get("PRODUCT_CLEARANCE_DEAL"));
-			dealDetailsVO.setDisplayOrder((Integer) row
-					.get("PRODUCT_DISPLAY_ORDER"));
-			dealDetailsVO.setUserId((String) row.get("PRODUCT_USER_ID"));
+			dealDetailsVO = populateDealDetails(row);
 		}
 		log.debug("<-- findById");
 		return dealDetailsVO;
@@ -99,31 +78,7 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 					SQLConstants.SELECT_ALL_DEALS);
 			DealDetailsVO dealDetailsVO = null;
 			for (Map<String, Object> row : rows) {
-				dealDetailsVO = new DealDetailsVO();
-				dealDetailsVO.setProductId((Integer) row.get("PRODUCT_ID"));
-				dealDetailsVO.setCategoryId((Integer) row.get("CATEGORY_ID"));
-				dealDetailsVO.setProductName((String) row.get("PRODUCT_NAME"));
-				dealDetailsVO.setProductDescription((String) row
-						.get("PRODUCT_DETAILS"));
-				dealDetailsVO
-						.setImageUrl((String) row.get("PRODUCT_IMAGE_URL"));
-				dealDetailsVO.setDealUrl((String) row.get("PRODUCT_DEAL_URL"));
-				dealDetailsVO.setVendorName((String) row.get("PRODUCT_VENDOR"));
-				dealDetailsVO.setActualPrice((BigDecimal) row
-						.get("PRODUCT_ACTUAL_PRICE"));
-				dealDetailsVO.setSalePrice((BigDecimal) row
-						.get("PRODUCT_SALE_PRICE"));
-				dealDetailsVO.setCuponCode((String) row.get("PRODUCT_COUPON"));
-				dealDetailsVO
-						.setStatus((String) row.get("PRODUCT_POST_STATUS"));
-				dealDetailsVO.setHotDeal((String) row.get("PRODUCT_HOT_DEAL"));
-				dealDetailsVO.setPopularDeal((String) row
-						.get("PRODUCT_POPULAR_DEAL"));
-				dealDetailsVO.setClearanceDeal((String) row
-						.get("PRODUCT_CLEARANCE_DEAL"));
-				dealDetailsVO.setDisplayOrder((Integer) row
-						.get("PRODUCT_DISPLAY_ORDER"));
-				dealDetailsVO.setUserId((String) row.get("PRODUCT_USER_ID"));
+				dealDetailsVO = populateDealDetails(row);
 				detailsVos.add(dealDetailsVO);
 			}
 		} catch (Exception ex) {
@@ -132,7 +87,6 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		}
 		log.debug("<-- findAll");
 		return detailsVos;
-
 	}
 
 	@Transactional(readOnly = true)
@@ -146,31 +100,7 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		DealDetailsVO dealDetailsVO = null;
 		try {
 			for (Map<String, Object> row : rows) {
-				dealDetailsVO = new DealDetailsVO();
-				dealDetailsVO.setProductId((Integer) row.get("PRODUCT_ID"));
-				dealDetailsVO.setCategoryId((Integer) row.get("CATEGORY_ID"));
-				dealDetailsVO.setProductName((String) row.get("PRODUCT_NAME"));
-				dealDetailsVO.setProductDescription((String) row
-						.get("PRODUCT_DETAILS"));
-				dealDetailsVO
-						.setImageUrl((String) row.get("PRODUCT_IMAGE_URL"));
-				dealDetailsVO.setDealUrl((String) row.get("PRODUCT_DEAL_URL"));
-				dealDetailsVO.setVendorName((String) row.get("PRODUCT_VENDOR"));
-				dealDetailsVO.setActualPrice((BigDecimal) row
-						.get("PRODUCT_ACTUAL_PRICE"));
-				dealDetailsVO.setSalePrice((BigDecimal) row
-						.get("PRODUCT_SALE_PRICE"));
-				dealDetailsVO.setCuponCode((String) row.get("PRODUCT_COUPON"));
-				dealDetailsVO
-						.setStatus((String) row.get("PRODUCT_POST_STATUS"));
-				dealDetailsVO.setHotDeal((String) row.get("PRODUCT_HOT_DEAL"));
-				dealDetailsVO.setPopularDeal((String) row
-						.get("PRODUCT_POPULAR_DEAL"));
-				dealDetailsVO.setClearanceDeal((String) row
-						.get("PRODUCT_CLEARANCE_DEAL"));
-				dealDetailsVO.setDisplayOrder((Integer) row
-						.get("PRODUCT_DISPLAY_ORDER"));
-				dealDetailsVO.setUserId((String) row.get("PRODUCT_USER_ID"));
+				dealDetailsVO = populateDealDetails(row);
 				detailsVos.add(dealDetailsVO);
 			}
 		} catch (Exception ex) {
@@ -180,6 +110,35 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		log.debug("<-- findDealsByCategory");
 		return detailsVos;
 
+	}
+
+	private DealDetailsVO populateDealDetails(Map<String, Object> row) {
+		DealDetailsVO dealDetailsVO = new DealDetailsVO();
+		dealDetailsVO.setProductId((Integer) row.get("PRODUCT_ID"));
+		dealDetailsVO.setCategoryId((Integer) row.get("CATEGORY_ID"));
+		dealDetailsVO.setProductName((String) row.get("PRODUCT_NAME"));
+		dealDetailsVO.setProductDescription((String) row
+				.get("PRODUCT_DETAILS"));
+		dealDetailsVO
+				.setImageUrl((String) row.get("PRODUCT_IMAGE_URL"));
+		dealDetailsVO.setDealUrl((String) row.get("PRODUCT_DEAL_URL"));
+		dealDetailsVO.setVendorName((String) row.get("PRODUCT_VENDOR"));
+		dealDetailsVO.setActualPrice((BigDecimal) row
+				.get("PRODUCT_ACTUAL_PRICE"));
+		dealDetailsVO.setSalePrice((BigDecimal) row
+				.get("PRODUCT_SALE_PRICE"));
+		dealDetailsVO.setCuponCode((String) row.get("PRODUCT_COUPON"));
+		dealDetailsVO
+				.setStatus((String) row.get("PRODUCT_POST_STATUS"));
+		dealDetailsVO.setHotDeal((String) row.get("PRODUCT_HOT_DEAL"));
+		dealDetailsVO.setPopularDeal((String) row
+				.get("PRODUCT_POPULAR_DEAL"));
+		dealDetailsVO.setClearanceDeal((String) row
+				.get("PRODUCT_CLEARANCE_DEAL"));
+		dealDetailsVO.setDisplayOrder((Integer) row
+				.get("PRODUCT_DISPLAY_ORDER"));
+		dealDetailsVO.setUserId((String) row.get("PRODUCT_USER_ID"));
+		return dealDetailsVO;
 	}
 
 	@Transactional(readOnly = true)
@@ -192,31 +151,7 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 					SQLConstants.SELECT_TOP_DEALS);
 			DealDetailsVO dealDetailsVO = null;
 			for (Map<String, Object> row : rows) {
-				dealDetailsVO = new DealDetailsVO();
-				dealDetailsVO.setProductId((Integer) row.get("PRODUCT_ID"));
-				dealDetailsVO.setCategoryId((Integer) row.get("CATEGORY_ID"));
-				dealDetailsVO.setProductName((String) row.get("PRODUCT_NAME"));
-				dealDetailsVO.setProductDescription((String) row
-						.get("PRODUCT_DETAILS"));
-				dealDetailsVO
-						.setImageUrl((String) row.get("PRODUCT_IMAGE_URL"));
-				dealDetailsVO.setDealUrl((String) row.get("PRODUCT_DEAL_URL"));
-				dealDetailsVO.setVendorName((String) row.get("PRODUCT_VENDOR"));
-				dealDetailsVO.setActualPrice((BigDecimal) row
-						.get("PRODUCT_ACTUAL_PRICE"));
-				dealDetailsVO.setSalePrice((BigDecimal) row
-						.get("PRODUCT_SALE_PRICE"));
-				dealDetailsVO.setCuponCode((String) row.get("PRODUCT_COUPON"));
-				dealDetailsVO
-						.setStatus((String) row.get("PRODUCT_POST_STATUS"));
-				dealDetailsVO.setHotDeal((String) row.get("PRODUCT_HOT_DEAL"));
-				dealDetailsVO.setPopularDeal((String) row
-						.get("PRODUCT_POPULAR_DEAL"));
-				dealDetailsVO.setClearanceDeal((String) row
-						.get("PRODUCT_CLEARANCE_DEAL"));
-				dealDetailsVO.setDisplayOrder((Integer) row
-						.get("PRODUCT_DISPLAY_ORDER"));
-				dealDetailsVO.setUserId((String) row.get("PRODUCT_USER_ID"));
+				dealDetailsVO = populateDealDetails(row);
 				detailsVos.add(dealDetailsVO);
 			}
 		} catch (Exception ex) {
@@ -245,5 +180,66 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		log.debug("Params: " + userVO);
 		getJdbcTemplate().update(SQLConstants.INSERT_USER,userVO.getUserName(),userVO.getUserPwd(),userVO.getUserEmailId(),userVO.getRoleId());
 		log.debug("<-- insertUser");
+	}
+
+	@Transactional(readOnly = true)
+	public List<DealDetailsVO> findAllHotDeals() {
+		log.debug("--> findAllHotDeals");
+		log.debug("Query: " + SQLConstants.SELECT_ALL_HOT_DEALS);
+		List<DealDetailsVO> detailsVos = new ArrayList<DealDetailsVO>();
+		try {
+			List<Map<String, Object>> rows = getJdbcTemplate().queryForList(
+					SQLConstants.SELECT_ALL_HOT_DEALS);
+			DealDetailsVO dealDetailsVO = null;
+			for (Map<String, Object> row : rows) {
+				dealDetailsVO = populateDealDetails(row);
+				detailsVos.add(dealDetailsVO);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+
+		}
+		log.debug("<-- findAllHotDeals");
+		return detailsVos;
+	}
+
+	@Transactional(readOnly = true)
+	public List<DealDetailsVO> findAllClearanceDeals() {
+		log.debug("--> findAllClearanceDeals");
+		log.debug("Query: " + SQLConstants.SELECT_ALL_CLEARANCE_DEALS);
+		List<DealDetailsVO> detailsVos = new ArrayList<DealDetailsVO>();
+		try {
+			List<Map<String, Object>> rows = getJdbcTemplate().queryForList(
+					SQLConstants.SELECT_ALL_CLEARANCE_DEALS);
+			DealDetailsVO dealDetailsVO = null;
+			for (Map<String, Object> row : rows) {
+				dealDetailsVO = populateDealDetails(row);
+				detailsVos.add(dealDetailsVO);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		log.debug("<-- findAllClearanceDeals");
+		return detailsVos;
+	}
+
+	@Transactional(readOnly = true)
+	public List<DealDetailsVO> findAllTravelDeals() {
+		log.debug("--> findAllTravelDeals");
+		log.debug("Query: " + SQLConstants.SELECT_ALL_POPULAR_DEALS);
+		List<DealDetailsVO> detailsVos = new ArrayList<DealDetailsVO>();
+		try {
+			List<Map<String, Object>> rows = getJdbcTemplate().queryForList(
+					SQLConstants.SELECT_ALL_POPULAR_DEALS);
+			DealDetailsVO dealDetailsVO = null;
+			for (Map<String, Object> row : rows) {
+				dealDetailsVO = populateDealDetails(row);
+				detailsVos.add(dealDetailsVO);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		log.debug("<-- findAllTravelDeals");
+		return detailsVos;
 	}
 }

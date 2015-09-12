@@ -10,7 +10,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -79,7 +78,7 @@ public class DealsDetailsController {
 	@RequestMapping(value = "hotDeals", method = RequestMethod.GET)
 	public String getHotDeals(Model model) {
 		log.debug("--> getHotDeals");
-		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllDeals();
+		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllHotDeals();
 		model.addAttribute("allDeals", dealDetailsVOs);
 		log.debug("<-- getHotDeals"+dealDetailsVOs);
 		return "home";
@@ -104,19 +103,21 @@ public class DealsDetailsController {
 	}
 	
 	@RequestMapping(value = "clearanceDeals", method = RequestMethod.GET)
-	public ModelAndView getClearanceDeals() {
+	public String getClearanceDeals(Model model) {
 		log.debug("--> getClearanceDeals");
-		ModelAndView model = new ModelAndView("home");
+		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllClearanceDeals();
+		model.addAttribute("allDeals", dealDetailsVOs);
 		log.debug("<-- getClearanceDeals");
-		return model;
+		return "home";
 	}
 
 	@RequestMapping(value = "travelDeals", method = RequestMethod.GET)
-	public ModelAndView getTravelDeals() {
+	public String getTravelDeals(Model model) {
 		log.debug("--> travelDeals");
-		ModelAndView model = new ModelAndView("home");
+		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllTraveleDeals();
+		model.addAttribute("allDeals", dealDetailsVOs);
 		log.debug("<-- travelDeals");
-		return model;
+		return "home";
 	}
 
 	
