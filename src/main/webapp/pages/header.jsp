@@ -29,7 +29,7 @@
 		</div>
 		<div id="topright">
 
-			<a href="#">Login / Register</a>
+			<a href="login">Login / Register</a>
 		</div>
 	</div>
 	<!--- Header Top Started --->

@@ -151,41 +151,78 @@ public class DealsDetailsController {
 		
 	@RequestMapping(value = "aboutPage", method = RequestMethod.GET)
 	public String showAboutMorningDealsPage(Model model) {
-		log.debug("--> aboutMorningDeals");
-		model.addAttribute("message","");
-		log.debug("<-- aboutMorningDeals");
+		log.debug("--> showAboutMorningDealsPage");
+		log.debug("<-- showAboutMorningDealsPage");
 		return "aboutPage";
 	}
 	
 	@RequestMapping(value = "privacy", method = RequestMethod.GET)
 	public String showPrivacyPolicyPage(Model model) {
-		log.debug("--> aboutMorningDeals");
-		model.addAttribute("message","");
-		log.debug("<-- aboutMorningDeals");
+		log.debug("--> showPrivacyPolicyPage");
+		log.debug("<-- showPrivacyPolicyPage");
 		return "privacy";
 	}
 	
 	@RequestMapping(value = "termsofuse", method = RequestMethod.GET)
 	public String showTermsOfUsePage(Model model) {
-		log.debug("--> aboutMorningDeals");
-		model.addAttribute("message","");
-		log.debug("<-- aboutMorningDeals");
+		log.debug("--> showTermsOfUsePage");
+		log.debug("<-- showTermsOfUsePage");
 		return "termsofuse";
 	}
 	
 	@RequestMapping(value = "contactus", method = RequestMethod.GET)
 	public String showContactUsPage(Model model) {
-		log.debug("--> aboutMorningDeals");
-		model.addAttribute("message","");
-		log.debug("<-- aboutMorningDeals");
+		log.debug("--> showContactUsPage");
+		log.debug("<-- showContactUsPage");
 		return "contactus";
 	}
 	
 	@RequestMapping(value = "advertise", method = RequestMethod.GET)
 	public String showAdvertisePage(Model model) {
-		log.debug("--> aboutMorningDeals");
-		model.addAttribute("message","");
-		log.debug("<-- aboutMorningDeals");
+		log.debug("--> showAdvertisePage");
+		log.debug("<-- showAdvertisePage");
 		return "advertise";
+	}
+	
+	@RequestMapping(value = "login", method = RequestMethod.GET)
+	public String showLoginPage() {
+		log.debug("--> showLoginPage");
+		log.debug("<-- showLoginPage");
+		return "login";
+	}
+	
+	@RequestMapping(value = "authenticate", method = RequestMethod.POST)
+	public String authenticateUser() {
+		log.debug("--> authenticateUser");
+		log.debug("<-- authenticateUser");
+		return "newproduct";
+	}
+	
+	@RequestMapping(value = "allproducts", method = RequestMethod.GET)
+	public String listAllProducts() {
+		log.debug("--> listAllProducts");
+		log.debug("<-- listAllProducts");
+		return "allproducts";
+	}
+	
+	@RequestMapping(value = "newproduct", method = RequestMethod.GET)
+	public String createProduct() {
+		log.debug("--> createProduct");
+		log.debug("<-- createProduct");
+		return "newproduct";
+	}
+	
+	@RequestMapping(value = "updateproduct", method = RequestMethod.GET)
+	public String updateProduct() {
+		log.debug("--> updateProduct");
+		log.debug("<-- updateProduct");
+		return "updateproduct";
+	}
+	
+	@RequestMapping(value = "resetpassword", method = RequestMethod.GET)
+	public String resetPassword() {
+		log.debug("--> resetPassword");
+		log.debug("<-- resetPassword");
+		return "resetpassword";
 	}
 }
