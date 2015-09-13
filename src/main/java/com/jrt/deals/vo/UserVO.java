@@ -48,4 +48,7 @@ public class UserVO implements Serializable{
 	}	
 	
 	
+	public boolean isAdminUser() {
+		return roleId == 1001? true: false;
+	}
 }

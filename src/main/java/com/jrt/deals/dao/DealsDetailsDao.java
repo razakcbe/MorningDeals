@@ -2,6 +2,7 @@ package com.jrt.deals.dao;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -35,7 +36,10 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 				detailsVO.getCuponCode(), detailsVO.getStatus(),
 				detailsVO.getHotDeal(), detailsVO.getPopularDeal(),
 				detailsVO.getClearanceDeal(), detailsVO.getDisplayOrder(),
-				detailsVO.getUserId());
+				detailsVO.getUserId(),
+				detailsVO.getUpdatedBy(),
+				detailsVO.getPostedDate(),
+				detailsVO.getUpdatedDate());
 		log.debug("<-- insert");
 	}
 
@@ -70,8 +74,29 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 	}
 
 	@Transactional(readOnly = true)
-	public List<DealDetailsVO> findAll() {
-		log.debug("--> findAll");
+	public List<DealDetailsVO> findAllActiveDeals() {
+		log.debug("--> findAllActiveDeals");
+		log.debug("Query: " + SQLConstants.SELECT_ACTIVE_DEALS);
+		List<DealDetailsVO> detailsVos = new ArrayList<DealDetailsVO>();
+		try {
+			List<Map<String, Object>> rows = getJdbcTemplate().queryForList(
+					SQLConstants.SELECT_ACTIVE_DEALS);
+			DealDetailsVO dealDetailsVO = null;
+			for (Map<String, Object> row : rows) {
+				dealDetailsVO = populateDealDetails(row);
+				detailsVos.add(dealDetailsVO);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+
+		}
+		log.debug("<-- findAllActiveDeals");
+		return detailsVos;
+	}
+	
+	@Transactional(readOnly = true)
+	public List<DealDetailsVO> findAllDeals() {
+		log.debug("--> findAllDeals");
 		log.debug("Query: " + SQLConstants.SELECT_ALL_DEALS);
 		List<DealDetailsVO> detailsVos = new ArrayList<DealDetailsVO>();
 		try {
@@ -86,7 +111,7 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 			ex.printStackTrace();
 
 		}
-		log.debug("<-- findAll");
+		log.debug("<-- findAllDeals");
 		return detailsVos;
 	}
 
@@ -139,6 +164,9 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		dealDetailsVO.setDisplayOrder((Integer) row
 				.get("PRODUCT_DISPLAY_ORDER"));
 		dealDetailsVO.setUserId((String) row.get("PRODUCT_USER_ID"));
+		dealDetailsVO.setUpdatedBy((String) row.get("PRODUCT_UPDATED_BY"));
+		dealDetailsVO.setPostedDate((Date) row.get("PRODUCT_POSTED_DT"));
+		dealDetailsVO.setUpdatedDate((Date) row.get("PRODUCT_UPDATED_DT"));
 		return dealDetailsVO;
 	}
 
@@ -244,23 +272,56 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		return detailsVos;
 	}
 
-	public boolean authenticateUser(Map<String,String> inputMap) {
+	public UserVO authenticateUser(Map<String,String> inputMap) {
 		log.debug("--> authenticateUser");
 		log.debug("Query: " + SQLConstants.SELECT_USER);
-		boolean isUserExist = false;
+		UserVO userVO = null;
 		String userName = inputMap.get("inputEmail");
 		String password = inputMap.get("inputPassword");
 		String saltedPassword;
 		try {
-			saltedPassword = SHAHashing.getHashedPassword(password);
+			saltedPassword = password;SHAHashing.getHashedPassword(password);
 			String sql = SQLConstants.SELECT_USER.replace("email",userName).replace("saltedPassword", saltedPassword);
 			List<Map<String, Object>> rows = getJdbcTemplate().queryForList(sql);
-			if(rows != null && rows.size() > 0)
-				isUserExist =true;
+			if(rows != null && rows.size() > 0){
+				for (Map<String, Object> row : rows) {
+					userVO = populateUser(row);
+				}
+			}
+				
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
 		log.debug("<-- authenticateUser");
-		return isUserExist;
+		return userVO;
+	}
+	
+	private UserVO populateUser(Map<String, Object> row) {
+		UserVO userVO = new UserVO();
+		userVO.setUserId((Integer) row.get("USER_ID"));
+		userVO.setRoleId((Integer) row.get("USER_ROLE_ID"));
+		userVO.setUserName((String) row.get("USER_NAME"));
+		userVO.setUserName((String) row.get("USER_PWD"));
+		userVO.setUserName((String) row.get("USER_EMAILID"));
+		return userVO;
+	}
+
+	public List<UserVO> getUserListExcept(Integer userId) {
+		log.debug("--> getUserListExcept");
+		log.debug("Query: " + SQLConstants.SELECT_USER_EXCEPT);
+		List<UserVO> userVOs = new ArrayList<UserVO>();
+		try {			
+			List<Map<String, Object>> rows = getJdbcTemplate().queryForList(SQLConstants.SELECT_USER_EXCEPT,userId);
+			if(rows != null && rows.size() > 0){
+				for (Map<String, Object> row : rows) {
+					userVOs.add(populateUser(row));
+				}
+			}
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		log.debug("<-- getUserListExcept");
+		return userVOs;
 	}
 }

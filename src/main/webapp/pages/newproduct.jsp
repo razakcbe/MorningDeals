@@ -1,3 +1,6 @@
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>        
@@ -63,7 +66,7 @@
 <body>
     
     <div class="header">
-        <a class="logo" href="index.html"><img src="img/logo.png" alt="Aquarius -  responsive admin panel" title="Aquarius -  responsive admin panel"/></a>
+        <a class="logo" href="#"><img src="img/logo.png" alt="Aquarius -  responsive admin panel" title="Aquarius -  responsive admin panel"/></a>
         <ul class="header_menu">
             <li class="list_icon"><a href="#">&nbsp;</a></li>
         </ul>    
@@ -74,22 +77,22 @@
         <div class="breadLine">            
             <div class="arrow"></div>
             <div class="adminControl active">
-                Hi, User
+                Hi, ${userVO.userName}
             </div>
         </div>
         
         <div class="admin">
-            <div class="image">
+            <!-- <div class="image">
                 <img src="img/users/User.jpg" class="img-polaroid"/>                
-            </div>
+            </div>-->
             <ul class="control">                
-                <li><span class="icon-comment"></span> <a href="messages.html">Messages</a> <a href="messages.html" class="caption red">12</a></li>
-                <li><span class="icon-cog"></span> <a href="forms.html">Settings</a></li>
-                <li><span class="icon-share-alt"></span> <a href="login">Logout</a></li>
-            </ul>
-            <div class="info">
+                <!-- <li><span class="icon-comment"></span> <a href="messages.html">Messages</a> <a href="messages.html" class="caption red">12</a></li>
+                 <li><span class="icon-cog"></span> <a href="forms.html">Settings</a></li> -->
+                <li><span class="icon-share-alt"></span> <a href="login">Logout</a></li> 
+            </ul> 
+            <!-- <div class="info">
                 <span>Welcom back! Your last visit: 24.10.2012 in 19:55</span>
-            </div>
+            </div> -->
         </div>
         
    <ul class="navigation">            
@@ -138,11 +141,13 @@
         <div class="breadLine">
             
             <ul class="breadcrumb">
-                <li><a href="#">Simple Admin</a> <span class="divider">></span></li>                
-                <li class="active">Forms stuff</li>
+                <li><a href="#">Admin</a> <span class="divider">></span></li>                
+                <!-- <li class="active">Forms stuff</li> -->
             </ul>
-                        
+              
             <ul class="buttons">
+              
+              <c:if test="${not empty userVOList}">
                 <li>
                     <a href="#" class="link_bcPopupList"><span class="icon-user"></span><span class="text">Users list</span></a>
 
@@ -154,61 +159,22 @@
                         </div>
                         <div class="body-fluid users">
 
-                            <div class="item clearfix">
-                                <div class="image"><a href="#"><img src="img/users/User_s.jpg" width="32"/></a></div>
+    						<c:forEach var="listValue" items="${userVOList}">
+    						<div class="item clearfix">
                                 <div class="info">
-                                    <a href="#" class="name">User</a>                                    
-                                    <span>online</span>
+                                    <a href="#" class="name"> ${listValue.userName }</a> 
                                 </div>
                             </div>
-
-                            <div class="item clearfix">
-                                <div class="image"><a href="#"><img src="img/users/olga_s.jpg" width="32"/></a></div>
-                                <div class="info">
-                                    <a href="#" class="name">Olga</a>                                
-                                    <span>online</span>
-                                </div>
-                            </div>                        
-
-                            <div class="item clearfix">
-                                <div class="image"><a href="#"><img src="img/users/alexey_s.jpg" width="32"/></a></div>
-                                <div class="info">
-                                    <a href="#" class="name">Alexey</a>  
-                                    <span>online</span>
-                                </div>
-                            </div>                              
-                        
-                            <div class="item clearfix">
-                                <div class="image"><a href="#"><img src="img/users/dmitry_s.jpg" width="32"/></a></div>
-                                <div class="info">
-                                    <a href="#" class="name">Dmitry</a>                                    
-                                    <span>online</span>
-                                </div>
-                            </div>                         
-
-                            <div class="item clearfix">
-                                <div class="image"><a href="#"><img src="img/users/helen_s.jpg" width="32"/></a></div>
-                                <div class="info">
-                                    <a href="#" class="name">Helen</a>                                                                        
-                                </div>
-                            </div>                                  
-
-                            <div class="item clearfix">
-                                <div class="image"><a href="#"><img src="img/users/alexander_s.jpg" width="32"/></a></div>
-                                <div class="info">
-                                    <a href="#" class="name">Alexander</a>                                                                        
-                                </div>
-                            </div>                                  
-
-                        </div>
-                        <div class="footer">
+    						</c:forEach>
+                            <div class="footer">
                             <button class="btn" type="button">Add new</button>
                             <button class="btn btn-danger link_bcPopupList" type="button">Close</button>
                         </div>
                     </div>                    
                     
-                </li>                
-                <li>
+                </li>
+               </c:if>                
+                <!-- <li>
                     <a href="#" class="link_bcPopupSearch"><span class="icon-search"></span><span class="text">Search</span></a>
                     
                     <div id="bcPopupSearch" class="popup">
@@ -227,7 +193,7 @@
                     </div>                
                 </li>
             </ul>
-            
+ -->            
         </div>
         
         <div class="workplace">

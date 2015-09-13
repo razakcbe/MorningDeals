@@ -6,6 +6,8 @@ package com.jrt.deals.action;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.jrt.deals.service.DealsDetailsService;
@@ -25,6 +28,7 @@ import com.jrt.deals.vo.UserVO;
  *
  */
 @Controller
+@SessionAttributes("userVO")
 public class DealsDetailsController {
 	private Logger log = Logger.getLogger(DealsDetailsController.class);
 	
@@ -35,7 +39,7 @@ public class DealsDetailsController {
 	public ModelAndView getHome() {
 		log.debug("--> getHome");
 		ModelAndView model = new ModelAndView("home");
-		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllDeals();
+		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllActiveDeals();
 		List<DealDetailsVO> topDealDetailsVOs = dealsDetailsService.findTopDeals();
 		model.addObject("allDeals", dealDetailsVOs);
 		model.addObject("topDeals", topDealDetailsVOs);
@@ -47,7 +51,7 @@ public class DealsDetailsController {
 	public ModelAndView showHome() {
 		log.debug("--> showHome");
 		ModelAndView model = new ModelAndView("home");
-		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllDeals();
+		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllActiveDeals();
 		List<DealDetailsVO> topDealDetailsVOs = dealsDetailsService.findTopDeals();
 		model.addObject("allDeals", dealDetailsVOs);
 		model.addObject("topDeals", topDealDetailsVOs);
@@ -58,7 +62,7 @@ public class DealsDetailsController {
 	@RequestMapping(value = "deals", method = RequestMethod.GET)
 	public String getDeals(Model model) {
 		log.debug("--> getDeals");
-		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllDeals();
+		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllActiveDeals();
 		List<DealDetailsVO> topDealDetailsVOs = dealsDetailsService.findTopDeals();
 		model.addAttribute("allDeals", dealDetailsVOs);
 		model.addAttribute("topDeals", topDealDetailsVOs);
@@ -130,9 +134,13 @@ public class DealsDetailsController {
 	}
 	
 	@RequestMapping(value = "createDeal", method = RequestMethod.POST)
-	public String createDeal(Model model,@RequestParam Map<String,String> allRequestParams) {
+	public String createDeal(Model model,@RequestParam Map<String,String> allRequestParams,HttpServletRequest request) {
 		log.debug("--> createDeal:"+allRequestParams);
 		DealDetailsVO dealDetailsVO = DealUtils.getDealDetailsVO(allRequestParams);
+		UserVO userVO = (UserVO) request.getSession().getAttribute("userVO");
+		if(userVO != null){
+			dealDetailsVO.setUserId(userVO.getUserName());
+		}
 		dealsDetailsService.insertDeal(dealDetailsVO);
 		model.addAttribute("message", "Thank you for Submitting Deal.We will review and show in the deals!!");
 		log.debug("<-- createDeal");
@@ -150,20 +158,37 @@ public class DealsDetailsController {
 	}
 			
 	@RequestMapping(value = "authenticate", method = RequestMethod.POST)
-	public String authenticateUser(Model model,@RequestParam Map<String,String> allRequestParams) {
+	public String authenticateUser(Model model,@RequestParam Map<String,String> allRequestParams,HttpServletRequest request) {
+		String returnStr = "login";
 		log.debug("--> authenticateUser:"+allRequestParams);
-		boolean isUserExist = dealsDetailsService.authenticateUser(allRequestParams);
-		log.debug("<-- authenticateUser");
-		if(isUserExist){
-			return "newproduct";
-		}else{
-			return "login";
+		UserVO userVO = dealsDetailsService.authenticateUser(allRequestParams);
+		log.debug("userVO::"+userVO);
+		
+		if(userVO != null){
+			model.addAttribute("userVO",userVO);
+			if(userVO.isAdminUser()){
+				List<UserVO> userVOList = dealsDetailsService.getUserListExcept(userVO.getUserId());
+				log.debug("userVOList::::::"+userVOList);
+				model.addAttribute("userVOList",userVOList);
+				returnStr =  "newproduct";
+			}else{
+				returnStr ="home";
+				List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllActiveDeals();
+				List<DealDetailsVO> topDealDetailsVOs = dealsDetailsService.findTopDeals();
+				model.addAttribute("allDeals", dealDetailsVOs);
+				model.addAttribute("topDeals", topDealDetailsVOs);
+			}
 		}
+		log.debug("<-- authenticateUser:returnStr"+returnStr);
+		return returnStr;
 	}
 	
 	@RequestMapping(value = "allproducts", method = RequestMethod.GET)
-	public String listAllProducts() {
+	public String listAllProducts(Model model) {
 		log.debug("--> listAllProducts");
+		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllDeals();
+		log.debug("dealDetailsVOs::"+dealDetailsVOs);
+		model.addAttribute("allDeals", dealDetailsVOs);
 		log.debug("<-- listAllProducts");
 		return "allproducts";
 	}
@@ -176,8 +201,11 @@ public class DealsDetailsController {
 	}
 	
 	@RequestMapping(value = "updateproduct", method = RequestMethod.GET)
-	public String updateProduct() {
+	public String updateProduct(Model model, Integer dealId) {
 		log.debug("--> updateProduct");
+		DealDetailsVO dealDetailsVO = dealsDetailsService.findDeal(dealId);
+		log.debug("dealDetailsVO::"+dealDetailsVO);
+		model.addAttribute("dealDetailsVO", dealDetailsVO);
 		log.debug("<-- updateProduct");
 		return "updateproduct";
 	}

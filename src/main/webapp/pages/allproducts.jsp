@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>        
@@ -238,7 +239,7 @@
                 <div class="span12">                    
                     <div class="head clearfix">
                         <div class="isw-grid"></div>
-                        <h1>Simple Sortable table</h1>                               
+                        <h1>Deals Posted</h1>                               
                     </div>
                     <div class="block-fluid table-sorting clearfix">
 
@@ -267,247 +268,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>10001</td>
-                    <td>Baby Products</td>
-                    <td>Amazaon</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;520</td>
-                    <td>&#8377;450</td>
+            
+            <c:forEach var="listValue" items="${allDeals}">
+            <tr>
+            
+                    <td>${listValue.productId}</td>
+                    <td>${listValue.productName}</td>
+                    <td>${listValue.vendorName}</td>
+                    <td>${listValue.postedDate}</td>
+                    <td>&#8377;${listValue.actualPrice}</td>
+                    <td>&#8377;${listValue.salePrice}</td>
                     <td>
-                    <a href="updateproduct" class="buttons edit"></a>
+                    <a href="updateproduct?dealId=${listValue.productId}" class="buttons edit"></a>
 			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
 				   </td>
                 </tr>
-                <tr>
-                    <td>10020</td>
-                    <td>Mobiles</td>
-                    <td>Snapdeal</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;18000</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-
-                </tr>
-                <tr>
-                    <td>10051</td>
-                    <td>Electronics</td>
-                    <td>Flipkart</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;520</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10035</td>
-                    <td>Electronics</td>
-                    <td>Amazaon</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;520</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10008</td>
-                    <td>Electronics</td>
-                    <td>Flipkart</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;520</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10011</td>
-                    <td>Mobiles</td>
-                    <td>Snapdeal</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;18000</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10068</td>
-                    <td>Electronics</td>
-                    <td>Flipkart</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;520</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10075</td>
-                    <td>Electronics</td>
-                    <td>Flipkart</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;18000</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10015</td>
-                    <td>Mobiles</td>
-                    <td>Flipkart</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;15000</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10042</td>
-                    <td>TVs</td>
-                    <td>Amazaon</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;15000</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10077</td>
-                    <td>Electronics</td>
-                    <td>Snapdeal</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;15000</td>
-                    <td>&#8377;12000</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10019</td>
-                    <td>Electronics</td>
-                    <td>Flipkart</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;520</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10002</td>
-                    <td>TVs</td>
-                    <td>Flipkart</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;520</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10044</td>
-                    <td>Electronics</td>
-                    <td>Amazaon</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;520</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10066</td>
-                    <td>TVs</td>
-                    <td>Snapdeal</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;520</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10048</td>
-                    <td>Electronics</td>
-                    <td>Flipkart</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;520</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10048</td>
-                    <td>Electronics</td>
-                    <td>Flipkart</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;520</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10049</td>
-                    <td>Electronics</td>
-                    <td>Snapdeal</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;520</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10078</td>
-                    <td>Baby Products</td>
-                    <td>Flipkart</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;520</td>
-                    <td>&#8377;450</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
-                <tr>
-                    <td>10040</td>
-                    <td>TVs</td>
-                    <td>Amazaon</td>
-                    <td>01/09/2015</td>
-                    <td>&#8377;18000</td>
-                    <td>&#8377;12000</td>
-                    <td>
-                    <a href="updateproduct" class="buttons edit"></a>
-			       <a href="#bModal" role="button" class="buttons delete" data-toggle="modal"></a>
-				   </td>
-                </tr>
+            </c:forEach>
             </tbody>
         </table>
         <div id="tablefooter">

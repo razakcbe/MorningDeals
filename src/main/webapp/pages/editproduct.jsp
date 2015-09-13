@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>        
@@ -243,38 +244,39 @@
                     <div class="row-form clearfix">
                             <div class="span2">Product Name:</div>
                             <div class="span9">
-                            <input type="text" placeholder="Product Name..."/>			</div>
+                            <input type="hidden" name="productId" value="${dealDetailsVO.productId}"/> 
+                            <input type="text" name="productName" placeholder="Product Name..." value="${dealDetailsVO.productName}"/>			</div>
                         </div>                                                               
 
 						<div class="row-form clearfix">
                             <div class="span2">Description:</div>
                             <div class="span9">
-                            <textarea id="wysiwyg" name="text" style="height: 300px;"></textarea>
+                            <textarea id="wysiwyg" name="productDescription" style="height: 300px;">${dealDetailsVO.productDescription}</textarea>
                             </div>
                         </div>  
                         
                          <div class="row-form clearfix">
                             <div class="span2">Destination URL:</div>
                             <div class="span9">
-                            <input type="text" placeholder="Destination URL..."/>			</div>
+                            <input type="text" name="dealUrl" placeholder="Destination URL..." value="${dealDetailsVO.dealUrl}"/>			</div>
                         </div>                                                               
                         
 						 <div class="row-form clearfix">
                             <div class="span2">Vendor Name:</div>
                             <div class="span9">
-                            <input type="text" placeholder="Vendor Name..."/></div>
+                            <input type="text" name="vendorName" placeholder="Vendor Name..." value="${dealDetailsVO.vendorName}"/></div>
                         </div>                                                               
 						
                          <div class="row-form clearfix">
                             <div class="span2">Actual Price:</div>
                             <div class="span9">
-                            <input type="text" placeholder="Actual Price..."/></div>
+                            <input type="text" name ="actualPrice" placeholder="Actual Price..." value="${dealDetailsVO.actualPrice}"/></div>
                         </div>                                                               
 						
                         <div class="row-form clearfix">
                             <div class="span2">Sale Price:</div>
                             <div class="span9">
-                            <input type="text" placeholder="Sale Price..."/></div>
+                            <input type="text" name="salePrice" placeholder="Sale Price..." value="${dealDetailsVO.salePrice}"/></div>
                         </div>                                                               
 						
                         <div class="row-form clearfix">

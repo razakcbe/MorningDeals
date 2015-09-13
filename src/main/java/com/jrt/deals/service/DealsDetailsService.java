@@ -37,9 +37,16 @@ public class DealsDetailsService {
 		log.debug("<-- insertDeal");
 	}
 
+	public List<DealDetailsVO> findAllActiveDeals() {
+		log.debug("--> findAllActiveDeals");
+		List<DealDetailsVO> dealDetailsVOList = dealsDetailsDao.findAllActiveDeals();
+		log.debug("<-- findAllActiveDeals");
+		return dealDetailsVOList;
+	}
+	
 	public List<DealDetailsVO> findAllDeals() {
 		log.debug("--> findAllDeals");
-		List<DealDetailsVO> dealDetailsVOList = dealsDetailsDao.findAll();
+		List<DealDetailsVO> dealDetailsVOList = dealsDetailsDao.findAllDeals();
 		log.debug("<-- findAllDeals");
 		return dealDetailsVOList;
 	}
@@ -101,11 +108,19 @@ public class DealsDetailsService {
 		return dealDetailsVOList;
 	}
 	
-	public boolean authenticateUser(Map<String,String> inputMap){
+	public UserVO authenticateUser(Map<String,String> inputMap){
 		log.debug("--> authenticateUser");
-		boolean isUserExist = dealsDetailsDao.authenticateUser(inputMap);
+		UserVO userVO = dealsDetailsDao.authenticateUser(inputMap);
 		log.debug("<-- authenticateUser");
-		return isUserExist;
+		return userVO;
+	}
+
+	public List<UserVO> getUserListExcept(Integer userId) {
+		log.debug("--> getUserListExcept");
+		List<UserVO> userVOs = dealsDetailsDao.getUserListExcept(userId);
+		log.debug("<-- getUserListExcept");
+		return userVOs;
+		
 	}
 
 }
