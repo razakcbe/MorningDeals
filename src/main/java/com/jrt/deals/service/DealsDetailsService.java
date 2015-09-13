@@ -4,6 +4,7 @@
 package com.jrt.deals.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,6 +99,13 @@ public class DealsDetailsService {
 		List<DealDetailsVO> dealDetailsVOList = dealsDetailsDao.findAllTravelDeals();
 		log.debug("<-- findAllTraveleDeals");
 		return dealDetailsVOList;
+	}
+	
+	public boolean authenticateUser(Map<String,String> inputMap){
+		log.debug("--> authenticateUser");
+		boolean isUserExist = dealsDetailsDao.authenticateUser(inputMap);
+		log.debug("<-- authenticateUser");
+		return isUserExist;
 	}
 
 }

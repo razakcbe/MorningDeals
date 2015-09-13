@@ -23,4 +23,6 @@ public class SQLConstants {
 	public static final String SELECT_RELATED_DEALS = null;
 
 	public static final String INSERT_USER = "Insert into MD_USER(USER_NAME,USER_PWD,USER_EMAILID,USER_ROLE_ID) values(?,?,?,?)";
+	
+	public static final String SELECT_USER = "select * from MD_USER where USER_EMAILID = 'email' and USER_PWD = 'saltedPassword'";
 }

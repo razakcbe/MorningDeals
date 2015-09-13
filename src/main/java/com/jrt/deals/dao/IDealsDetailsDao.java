@@ -1,6 +1,7 @@
 package com.jrt.deals.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.jrt.deals.vo.DealDetailsVO;
 import com.jrt.deals.vo.UserVO;
@@ -19,4 +20,5 @@ public interface IDealsDetailsDao {
 	public List<DealDetailsVO> findAllHotDeals();
 	public List<DealDetailsVO> findAllClearanceDeals();
 	public List<DealDetailsVO> findAllTravelDeals();
+	public boolean authenticateUser(Map<String,String> inputMap);
 }

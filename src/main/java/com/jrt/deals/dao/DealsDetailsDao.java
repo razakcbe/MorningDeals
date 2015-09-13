@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jrt.deals.utils.Mocker;
+import com.jrt.deals.utils.SHAHashing;
 import com.jrt.deals.utils.SQLConstants;
 import com.jrt.deals.vo.DealDetailsVO;
 import com.jrt.deals.vo.UserVO;
@@ -241,5 +242,25 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		}
 		log.debug("<-- findAllTravelDeals");
 		return detailsVos;
+	}
+
+	public boolean authenticateUser(Map<String,String> inputMap) {
+		log.debug("--> authenticateUser");
+		log.debug("Query: " + SQLConstants.SELECT_USER);
+		boolean isUserExist = false;
+		String userName = inputMap.get("inputEmail");
+		String password = inputMap.get("inputPassword");
+		String saltedPassword;
+		try {
+			saltedPassword = SHAHashing.getHashedPassword(password);
+			String sql = SQLConstants.SELECT_USER.replace("email",userName).replace("saltedPassword", saltedPassword);
+			List<Map<String, Object>> rows = getJdbcTemplate().queryForList(sql);
+			if(rows != null && rows.size() > 0)
+				isUserExist =true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		log.debug("<-- authenticateUser");
+		return isUserExist;
 	}
 }

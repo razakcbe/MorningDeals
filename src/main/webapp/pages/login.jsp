@@ -70,11 +70,11 @@
         <form class="form-horizontal" id="form-horizontal" name="form-horizontal" method="post" action="authenticate">          
             <div class="control-group">
                 <label for="inputEmail">Email</label>                
-                <input type="text" id="inputEmail"/>
+                <input type="text" name="inputEmail" id="inputEmail"/>
             </div>
             <div class="control-group">
                 <label for="inputPassword">Password</label>                
-                <input type="password" id="inputPassword"/>                
+                <input type="password" name="inputPassword" id="inputPassword"/>                
             </div>
             <div class="control-group" style="margin-bottom: 5px;">                
                 <label class="checkbox"><input type="checkbox"> Remember me</label>                                                

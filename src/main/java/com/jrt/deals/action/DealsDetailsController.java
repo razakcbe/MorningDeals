@@ -148,7 +148,47 @@ public class DealsDetailsController {
 		log.debug("<-- subscribe");
 		return getDeals(model);
 	}
-		
+			
+	@RequestMapping(value = "authenticate", method = RequestMethod.POST)
+	public String authenticateUser(Model model,@RequestParam Map<String,String> allRequestParams) {
+		log.debug("--> authenticateUser:"+allRequestParams);
+		boolean isUserExist = dealsDetailsService.authenticateUser(allRequestParams);
+		log.debug("<-- authenticateUser");
+		if(isUserExist){
+			return "newproduct";
+		}else{
+			return "login";
+		}
+	}
+	
+	@RequestMapping(value = "allproducts", method = RequestMethod.GET)
+	public String listAllProducts() {
+		log.debug("--> listAllProducts");
+		log.debug("<-- listAllProducts");
+		return "allproducts";
+	}
+	
+	@RequestMapping(value = "newproduct", method = RequestMethod.GET)
+	public String createProduct() {
+		log.debug("--> createProduct");
+		log.debug("<-- createProduct");
+		return "newproduct";
+	}
+	
+	@RequestMapping(value = "updateproduct", method = RequestMethod.GET)
+	public String updateProduct() {
+		log.debug("--> updateProduct");
+		log.debug("<-- updateProduct");
+		return "updateproduct";
+	}
+	
+	@RequestMapping(value = "resetpassword", method = RequestMethod.GET)
+	public String resetPassword() {
+		log.debug("--> resetPassword");
+		log.debug("<-- resetPassword");
+		return "resetpassword";
+	}
+	
 	@RequestMapping(value = "aboutPage", method = RequestMethod.GET)
 	public String showAboutMorningDealsPage(Model model) {
 		log.debug("--> showAboutMorningDealsPage");
@@ -189,40 +229,5 @@ public class DealsDetailsController {
 		log.debug("--> showLoginPage");
 		log.debug("<-- showLoginPage");
 		return "login";
-	}
-	
-	@RequestMapping(value = "authenticate", method = RequestMethod.POST)
-	public String authenticateUser() {
-		log.debug("--> authenticateUser");
-		log.debug("<-- authenticateUser");
-		return "newproduct";
-	}
-	
-	@RequestMapping(value = "allproducts", method = RequestMethod.GET)
-	public String listAllProducts() {
-		log.debug("--> listAllProducts");
-		log.debug("<-- listAllProducts");
-		return "allproducts";
-	}
-	
-	@RequestMapping(value = "newproduct", method = RequestMethod.GET)
-	public String createProduct() {
-		log.debug("--> createProduct");
-		log.debug("<-- createProduct");
-		return "newproduct";
-	}
-	
-	@RequestMapping(value = "updateproduct", method = RequestMethod.GET)
-	public String updateProduct() {
-		log.debug("--> updateProduct");
-		log.debug("<-- updateProduct");
-		return "updateproduct";
-	}
-	
-	@RequestMapping(value = "resetpassword", method = RequestMethod.GET)
-	public String resetPassword() {
-		log.debug("--> resetPassword");
-		log.debug("<-- resetPassword");
-		return "resetpassword";
 	}
 }
