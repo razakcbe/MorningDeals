@@ -42,7 +42,7 @@
 		<!--- Header Inner Started --->
 		<div id="hleft">
 			<!--- Logo Started --->
-			<img src="images/morningdeals-logo.png" />
+			<a href="home" ><img src="images/morningdeals-logo.png" /></a>
 		</div>
 		<!--- Logo Closed --->
 		<div id="hright">

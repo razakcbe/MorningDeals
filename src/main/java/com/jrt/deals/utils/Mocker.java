@@ -111,15 +111,26 @@ public class Mocker {
 		vo3.setActualPrice(new BigDecimal("500"));
 		vo3.setSalePrice(new BigDecimal("480"));
 		detailsVos.add(vo3);
-		DealDetailsVO vo6 = new DealDetailsVO();
-		vo6.setProductId(6);
-		vo6.setDealUrl("http://www.flipkart.com/saco-14-inch-expandable-sleeve-slip-case/p/itme2gpn2nvgqajz?pid=LTBE2GPNJSADGNSN&ref=L%3A5081625603472641244&srno=p_4&query=elite+hp+laptops&otracker=from-search");
-		vo6.setImageUrl("http://img5a.flixcart.com/image/laptop-bag/d/x/4/tobag-2265-saco-laptop-sleeve-top-open-laptop-bag-for-asus-400x400-imadvgu8rvbtz7f7.jpeg");
-		vo6.setProductName("Saco 14");
-		vo6.setProductDescription("Free Delivery");
-		vo6.setActualPrice(new BigDecimal("500"));
-		vo6.setSalePrice(new BigDecimal("480"));
-		detailsVos.add(vo6);
+		
+		DealDetailsVO vo7 = new DealDetailsVO();
+		vo7.setProductId(6);
+		vo7.setDealUrl("http://www.flipkart.com/saco-14-inch-expandable-sleeve-slip-case/p/itme2gpn2nvgqajz?pid=LTBE2GPNJSADGNSN&ref=L%3A5081625603472641244&srno=p_4&query=elite+hp+laptops&otracker=from-search");
+		vo7.setImageUrl("http://img5a.flixcart.com/image/laptop-bag/d/x/4/tobag-2265-saco-laptop-sleeve-top-open-laptop-bag-for-asus-400x400-imadvgu8rvbtz7f7.jpeg");
+		vo7.setProductName("Saco 14");
+		vo7.setProductDescription("Free Delivery");
+		vo7.setActualPrice(new BigDecimal("500"));
+		vo7.setSalePrice(new BigDecimal("480"));
+		detailsVos.add(vo7);
+		
+		 vo7 = new DealDetailsVO();
+		vo7.setProductId(6);
+		vo7.setDealUrl("http://www.flipkart.com/saco-14-inch-expandable-sleeve-slip-case/p/itme2gpn2nvgqajz?pid=LTBE2GPNJSADGNSN&ref=L%3A5081625603472641244&srno=p_4&query=elite+hp+laptops&otracker=from-search");
+		vo7.setImageUrl("http://img5a.flixcart.com/image/laptop-bag/d/x/4/tobag-2265-saco-laptop-sleeve-top-open-laptop-bag-for-asus-400x400-imadvgu8rvbtz7f7.jpeg");
+		vo7.setProductName("Saco 14");
+		vo7.setProductDescription("Free Delivery");
+		vo7.setActualPrice(new BigDecimal("500"));
+		vo7.setSalePrice(new BigDecimal("480"));
+		detailsVos.add(vo7);
 		return detailsVos;
 	}
 	public static DealDetailsVO getDetailsVo(){

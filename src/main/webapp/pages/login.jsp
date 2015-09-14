@@ -1,94 +1,98 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>        
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <!--[if gt IE 8]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <![endif]-->
-    
-    <title>Login - Morning Deals</title>
-
-    <link rel="icon" type="img/ico" href="favicon.ico"/>
-    
-    <link href="css/stylesheets.css" rel="stylesheet" type="text/css" />
-    <!--[if lt IE 8]>
-        <link href="css/ie7.css" rel="stylesheet" type="text/css" />
-    <![endif]-->    
-    <link rel='stylesheet' type='text/css' href='css/fullcalendar.print.css' media='print' />
-    
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js'></script>
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'></script>
-    <script type='text/javascript' src='js/plugins/jquery/jquery.mousewheel.min.js'></script>
-    
-    <script type='text/javascript' src='js/plugins/cookie/jquery.cookies.2.2.0.min.js'></script>
-    
-    <script type='text/javascript' src='js/plugins/bootstrap.min.js'></script>
-    
-    <script type='text/javascript' src='js/plugins/charts/excanvas.min.js'></script>
-    <script type='text/javascript' src='js/plugins/charts/jquery.flot.js'></script>    
-    <script type='text/javascript' src='js/plugins/charts/jquery.flot.stack.js'></script>    
-    <script type='text/javascript' src='js/plugins/charts/jquery.flot.pie.js'></script>
-    <script type='text/javascript' src='js/plugins/charts/jquery.flot.resize.js'></script>
-    
-    <script type='text/javascript' src='js/plugins/sparklines/jquery.sparkline.min.js'></script>
-    
-    <script type='text/javascript' src='js/plugins/fullcalendar/fullcalendar.min.js'></script>
-    
-    <script type='text/javascript' src='js/plugins/select2/select2.min.js'></script>
-    
-    <script type='text/javascript' src='js/plugins/uniform/uniform.js'></script>
-    
-    <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput-1.3.min.js'></script>
-    
-    <script type='text/javascript' src='js/plugins/validation/languages/jquery.validationEngine-en.js' charset='utf-8'></script>
-    <script type='text/javascript' src='js/plugins/validation/jquery.validationEngine.js' charset='utf-8'></script>
-    
-    <script type='text/javascript' src='js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'></script>
-    <script type='text/javascript' src='js/plugins/animatedprogressbar/animated_progressbar.js'></script>
-    
-    <script type='text/javascript' src='js/plugins/qtip/jquery.qtip-1.0.0-rc3.min.js'></script>
-    
-    <script type='text/javascript' src='js/plugins/cleditor/jquery.cleditor.js'></script>
-    
-    <script type='text/javascript' src='js/plugins/dataTables/jquery.dataTables.min.js'></script>    
-    
-    <script type='text/javascript' src='js/plugins/fancybox/jquery.fancybox.pack.js'></script>
-    
-    <script type='text/javascript' src='js/cookies.js'></script>
-    <script type='text/javascript' src='js/actions.js'></script>
-    <script type='text/javascript' src='js/charts.js'></script>
-    <script type='text/javascript' src='js/plugins.js'></script>
-    
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta name="viewport" content="width=device-width, initial--scale=1.0">
+		<meta charset="utf-8">
+			<title>Morning Deals</title>
+			<link rel="stylesheet" href="css/style.css" />
+			<link href='http://fonts.googleapis.com/css?family=Terminal+Dosis'
+				rel='stylesheet' type='text/css'>
+				<!-- The below script Makes IE understand the new html5 tags are there and applies our CSS to it -->
+				<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+				<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
 </head>
 <body>
-    
-    <div class="loginBox">        
-        <div class="loginHead">
-            <img src="img/logo.png" alt="Morning Deals -  responsive admin panel" title="Morning Deals -  responsive admin panel"/>
-        </div>
-        <form class="form-horizontal" id="form-horizontal" name="form-horizontal" method="post" action="authenticate">          
-            <div class="control-group">
-                <label for="inputEmail">Email</label>                
-                <input type="text" name="inputEmail" id="inputEmail"/>
-            </div>
-            <div class="control-group">
-                <label for="inputPassword">Password</label>                
-                <input type="password" name="inputPassword" id="inputPassword"/>                
-            </div>
-            <div class="control-group" style="margin-bottom: 5px;">                
-                <label class="checkbox"><input type="checkbox"> Remember me</label>                                                
-            </div>
-            <div class="form-actions">
-                <button type="submit" class="btn btn-block">Sign in</button>
-            </div>
-             <div class="control-group" style="margin-bottom: 5px;">                
-                <label><a href="resetpassword">Forgot Your Password?</a></label>                                                
-            </div>
 
-        </form>        
-        
-    </div>    
-    
+	<div class="product_wraper">
+		<!---- Main Prodcut_wrapper Start --->
+		<section>
+		<div id="container_demo">
+			<!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+			<a class="hiddenanchor" id="toregister"></a> <a class="hiddenanchor"
+				id="tologin"></a>
+			<div id="wrapper">
+				<div id="login" class="animate form">
+
+					<form class="form-horizontal" id="form-horizontal"
+						name="form-horizontal" method="post" action="authenticate">
+						<p> 
+                                    <label for="username" class="uname" data-icon="u" > Your email or username </label>
+                                    <input id="username" name="inputEmail" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+                                </p>
+                                <p> 
+                                    <label for="password" class="youpasswd" data-icon="p"> Your password </label>
+                                    <input id="password" name="inputPassword" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                </p>
+                                <p class="keeplogin"> 
+									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+									<label for="loginkeeping">Keep me logged in</label>
+								</p>
+                                <p class="login button"> 
+                                    <input type="submit" value="Login" /> 
+								</p>
+								
+					<p class="change_link">
+						Not a member yet ? <a href="#toregister" class="to_register">Join
+							us</a>
+					</p>
+					</form>
+
+
+				</div>
+
+				<div id="register" class="animate form">
+					<form action="addUser" autocomplete="on" method="post">
+						<h1>Sign up</h1>
+						<p>
+							<label for="usernamesignup" class="uname" data-icon="u">Your
+								username</label> <input id="usernamesignup" name="usernamesignup"
+								required="required" type="text" placeholder="mysuperusername690" />
+						</p>
+						<p>
+							<label for="emailsignup" class="youmail" data-icon="e">
+								Your email</label> <input id="emailsignup" name="emailsignup"
+								required="required" type="email"
+								placeholder="mysupermail@mail.com" />
+						</p>
+						<p>
+							<label for="passwordsignup" class="youpasswd" data-icon="p">Your
+								password </label> <input id="passwordsignup" name="passwordsignup"
+								required="required" type="password" placeholder="eg. X8df!90EO" />
+						</p>
+						<p>
+							<label for="passwordsignup_confirm" class="youpasswd"
+								data-icon="p">Please confirm your password </label> <input
+								id="passwordsignup_confirm" name="passwordsignup_confirm"
+								required="required" type="password" placeholder="eg. X8df!90EO" />
+						</p>
+						<p class="signin button">
+							<input type="submit" value="Sign up" />
+						</p>
+						<p class="change_link">
+							Already a member ? <a href="#tologin" class="to_register"> Go
+								and log in </a>
+						</p>
+					</form>
+				</div>
+
+			</div>
+		</div>
+		</section>
+	</div>
+	<!--- Wrapper End ---->
 </body>
 </html>
+

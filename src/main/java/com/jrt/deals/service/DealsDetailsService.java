@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jrt.deals.dao.IDealsDetailsDao;
+import com.jrt.deals.utils.DealUtils;
 import com.jrt.deals.vo.DealDetailsVO;
 import com.jrt.deals.vo.UserVO;
 
@@ -121,6 +122,14 @@ public class DealsDetailsService {
 		log.debug("<-- getUserListExcept");
 		return userVOs;
 		
+	}
+
+	public UserVO addUser(Map<String, String> allRequestParams) {
+		log.debug("--> addUser");
+		UserVO userVO = DealUtils.getSignupUserVO(allRequestParams);		
+		 dealsDetailsDao.insertUser(userVO);
+		log.debug("<-- addUser");
+		return userVO;
 	}
 
 }

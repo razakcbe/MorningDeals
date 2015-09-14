@@ -633,7 +633,7 @@ height:35px;
 	margin-top:30px;
 	background:#FFF;
 	margin-bottom:10px;
-	margin-left:150px;
+
 }
 
 .content_wrapper ol li{
@@ -789,17 +789,6 @@ box-shadow: 2px 2px 2px #888888;
 	#items strong {border-bottom: 1px solid #ececec;display:block;padding-bottom:5px; background:#FFF; padding-right:5px; padding-left:5px;box-shadow: 2px 2px  2px 2px #CCC; }
 		#items strong em {float:right;font-weight:normal;font-size:1.5em; background:#FFF; }
 
-.price_tag{ width:182px; height:25px; background:#FFF;}		
-
-.price_left { width: 85px;  height:25px; float:left; text-decoration:line-through; margin-left:5px;}
-                         
-.price_right{ width: 85px; height:25px; float:left; text-align:right; margin-right:5px;}
-
-.price_left a{color:#F00; font-weight:bold;}
-.price_left a:hover{color:#060; font-weight:bold;}
-
-.price_right a{color:#F00; font-weight:bold;}
-.price_right a:hover{color:#060; font-weight:bold;}
 
 
 .side_price_right a{color:#F00; font-weight:bold;}
@@ -2204,7 +2193,7 @@ input::-webkit-input-placeholder {
   width: 9999px;
 }
 
-.scroll_horizontal .slist li {
+.scroll_horizontal .slist {
   float: left;
   width: 200px;
   height:250px;
@@ -2241,27 +2230,6 @@ input::-webkit-input-placeholder {
 .scroll_horizontal .next:hover { background-position: -40px -50px; }
 
 	
-.slist a.see_deal {height:25px; background:#33809e; padding-left:12px; padding-right:5px; text-align:center; color:#FFF; border-radius:5px ; padding-top:3px; float:left; font-weight:bold; font-size:13px; width:165px; border-bottom:2px #999 solid;}
-
-.slist a.see_deal:hover {height:25px; background:#0096d6; padding-left:12px; padding-right:5px; text-align:center; color:#FFF; font-weight:bold; font-style:italic; padding-top:3px; border-bottom:2px #999 solid; float:left; font-weight:bold; font-size:15px; text-decoration:underline;}
-
-.slist a.product_name {height:40px; min-height:35px; background:#FFF; padding-left:5px;  padding-right:5px; color:#6796b8; font-weight:bold; }
-
-.slist a.product_name:hover {height:40px; min-height:35px; background:#FFF; padding-left:5px;  padding-right:5px; border-bottom:1px #CCC solid; color:#0096d6; font-weight:bold; font-style:italic; }
-
-
-.slist a img {width:180px; border:1px solid #fff;-webkit-box-shadow:0px 0px 5px 0px rgba(180, 160, 145, 0.2);-moz-box-shadow:0px 0px 5px 0px rgba(180, 160, 145, 0.2);box-shadow:0px 0px 5px 0px rgba(180, 160, 145, 0.2); background:#FFF; box-shadow: 1px 1px 1px 1px #CCC; height:150px;}
-
-.slist a:hover img {-webkit-box-shadow:0px 0px 5px 0px rgba(180, 160, 145, 0.8);-moz-box-shadow:0px 0px 5px 0px rgba(180, 160, 145, 0.8);box-shadow:0px 0px 5px 0px rgba(180, 160, 145, 0.8);}
-	
-		
-.slist a .actual_price {height:25px; padding-left:8px; padding-right:5px; text-decoration:line-through; color:#060; float:left; padding-top:3px;  width:162px;}
-	
-.slist a.deal_price {height:25px; padding-right:5px; float:right; color:#060; font-weight:bold; padding-top:3px; width:162px; }
-
-
-
-
 /* ==============================================================
    ====== Contact Us / Advertise Form ====== 
    =============================================================== */
@@ -2727,3 +2695,138 @@ input::-webkit-input-placeholder {
 
 
 
+.recommended_items {
+	background:#000;
+  overflow: hidden;
+}
+
+#recommended-item-carousel .carousel-inner .item {
+  padding-left: 0;
+}
+
+.recommended-item-control {
+  position: absolute;
+  top: 41%;
+}
+
+.recommended-item-control i {
+  background: none repeat scroll 0 0 #FE980F;
+  color: #FFFFFF;
+  font-size: 20px;
+  padding: 4px 10px;
+}
+
+.recommended-item-control i:hover {
+  background: #ccccc6;
+}
+
+
+/* Circular Content Carousel Style */
+.ca-container{
+	position:relative;
+	margin:10px auto 20px auto;
+	width:1084px;
+	height:250px;
+	margin-left:18px;
+}
+.ca-wrapper{
+	width:100%;
+	height:100%;
+	position:relative;
+}
+
+.ca-item{
+	position:relative;
+	float:left;
+	width:220px;
+	height:100%;
+}
+.ca-content ul{
+	margin:20px 15px;
+	height:30px;
+}
+.ca-content ul li{
+	float:left;
+	margin:0px 2px;
+}
+.ca-content ul li a{
+	color:#fff;
+	background:#000;
+	padding:3px 6px;
+	font-size:14px;
+	font-family: "Georgia","Times New Roman",serif;
+	font-style:italic;
+}
+.ca-content ul li a:hover{
+	background:#fff;
+	color:#000;
+	text-shadow:none;
+}
+.ca-nav span{
+	width:25px;
+	height:38px;
+	background:transparent url(../images/arrows.png) no-repeat top left;
+	position:absolute;
+	top:50%;
+	margin-top:-19px;
+	left:5px;
+	text-indent:-9000px;
+	opacity:0.7;
+	cursor:pointer;
+	z-index:9999;
+}
+.ca-nav span.ca-nav-next{
+	background-position:top right;
+	left:auto;
+	right:15px;
+}
+.ca-nav span:hover{
+	opacity:1.0;
+}
+
+
+.slist {
+  overflow: hidden;
+
+}
+
+.slist {
+  float: left;
+  width: 180px;
+  height:250px;
+  padding-left:10px;
+  padding-right:10px;
+  background:#FFF;
+  
+}
+
+	
+.slist a.see_deal {height:25px; background:#33809e; padding-left:12px; padding-right:5px; text-align:center; color:#FFF; border-radius:5px ; padding-top:3px; float:left; font-weight:bold; font-size:13px; width:165px; border-bottom:2px #999 solid;}
+
+.slist a.see_deal:hover {height:25px; background:#0096d6; padding-left:12px; padding-right:5px; text-align:center; color:#FFF; font-weight:bold; font-style:italic; padding-top:3px; border-bottom:2px #999 solid; float:left; font-weight:bold; font-size:15px; text-decoration:underline;}
+
+.slist a.product_name {height:40px; min-height:35px; background:#FFF; padding-left:5px;  padding-right:5px; color:#6796b8; font-weight:bold; }
+
+.slist a.product_name:hover {height:40px; min-height:35px; background:#FFF; padding-left:5px;  padding-right:5px; border-bottom:1px #CCC solid; color:#0096d6; font-weight:bold; font-style:italic; }
+
+
+.slist a img {width:180px; border:1px solid #fff;-webkit-box-shadow:0px 0px 5px 0px rgba(180, 160, 145, 0.2);-moz-box-shadow:0px 0px 5px 0px rgba(180, 160, 145, 0.2);box-shadow:0px 0px 5px 0px rgba(180, 160, 145, 0.2); background:#FFF; box-shadow: 1px 1px 1px 1px #CCC; height:150px;}
+
+.slist a:hover img {-webkit-box-shadow:0px 0px 5px 0px rgba(180, 160, 145, 0.8);-moz-box-shadow:0px 0px 5px 0px rgba(180, 160, 145, 0.8);box-shadow:0px 0px 5px 0px rgba(180, 160, 145, 0.8);}
+	
+		
+.slist a .actual_price {height:25px; padding-left:8px; padding-right:5px; text-decoration:line-through; color:#060; float:left; padding-top:3px;  width:162px;}
+	
+.slist a.deal_price {height:25px; padding-right:5px; float:right; color:#060; font-weight:bold; padding-top:3px; width:162px; }
+
+.price_tag{ width:182px; height:25px; background:#FFF;}		
+
+.price_left { width: 85px;  height:25px; float:left; text-decoration:line-through; margin-left:5px;}
+                         
+.price_right{ width: 85px; height:25px; float:left; text-align:right; margin-right:5px;}
+
+.price_left a{color:#F00; font-weight:bold;}
+.price_left a:hover{color:#060; font-weight:bold;}
+
+.price_right a{color:#F00; font-weight:bold;}
+.price_right a:hover{color:#060; font-weight:bold;}

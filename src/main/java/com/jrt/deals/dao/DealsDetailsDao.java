@@ -324,4 +324,5 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		log.debug("<-- getUserListExcept");
 		return userVOs;
 	}
+
 }

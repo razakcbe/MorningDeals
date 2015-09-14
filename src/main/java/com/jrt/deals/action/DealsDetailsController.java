@@ -93,6 +93,7 @@ public class DealsDetailsController {
 		log.debug("--> getProductDesc");
 		DealDetailsVO dealDetailsVO = dealsDetailsService.findDeal(new Long(productId));
 		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findRelatedDeals(productId);
+		log.debug("dealDetailsVOs::"+dealDetailsVOs.size());
 		model.addAttribute("dealDetailsVO", dealDetailsVO);
 		model.addAttribute("relatedDeals", dealDetailsVOs);
 		log.debug("<-- getProductDesc:"+dealDetailsVO);
@@ -183,6 +184,32 @@ public class DealsDetailsController {
 		return returnStr;
 	}
 	
+	@RequestMapping(value = "addUser", method = RequestMethod.POST)
+	public String addUser(Model model,@RequestParam Map<String,String> allRequestParams,HttpServletRequest request) {
+		String returnStr = "login";
+		log.debug("--> addUser:"+allRequestParams);
+		UserVO userVO = dealsDetailsService.addUser(allRequestParams);
+		log.debug("userVO::"+userVO);
+		
+		if(userVO != null){
+			model.addAttribute("userVO",userVO);
+			if(userVO.isAdminUser()){
+				List<UserVO> userVOList = dealsDetailsService.getUserListExcept(userVO.getUserId());
+				log.debug("userVOList::::::"+userVOList);
+				model.addAttribute("userVOList",userVOList);
+				returnStr =  "newproduct";
+			}else{
+				returnStr ="home";
+				List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllActiveDeals();
+				List<DealDetailsVO> topDealDetailsVOs = dealsDetailsService.findTopDeals();
+				model.addAttribute("allDeals", dealDetailsVOs);
+				model.addAttribute("topDeals", topDealDetailsVOs);
+			}
+		}
+		log.debug("<-- addUser"+returnStr);
+		return returnStr;
+	}
+	
 	@RequestMapping(value = "allproducts", method = RequestMethod.GET)
 	public String listAllProducts(Model model) {
 		log.debug("--> listAllProducts");
@@ -253,9 +280,14 @@ public class DealsDetailsController {
 	}
 	
 	@RequestMapping(value = "login", method = RequestMethod.GET)
-	public String showLoginPage() {
+	public String showLoginPage(Model model,@RequestParam Map<String,String> allRequestParams,HttpServletRequest request) {
 		log.debug("--> showLoginPage");
+		String retunrStr = "login";
+		if( allRequestParams.containsKey("usernamesignup")){
+			retunrStr = addUser(model, allRequestParams, request);
+		}
 		log.debug("<-- showLoginPage");
-		return "login";
+		return retunrStr;
 	}
+	
 }

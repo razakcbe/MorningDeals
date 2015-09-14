@@ -58,4 +58,21 @@ public class DealUtils {
 		userVO.setUserPwd("dummy");
 		return userVO;
 	}
+	
+	public static UserVO getSignupUserVO(Map<String, String> allRequestParams) {
+		UserVO userVO = new UserVO();
+		String userName = allRequestParams.get("usernamesignup");
+		String password = allRequestParams.get("passwordsignup");
+		String userEmail = allRequestParams.get("emailsignup");
+		userVO.setUserName(userName);
+		userVO.setUserEmailId(userEmail);
+		userVO.setRoleId(1002);
+		try {
+			userVO.setUserPwd(SHAHashing.getHashedPassword(password));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return userVO;
+	}
 }
