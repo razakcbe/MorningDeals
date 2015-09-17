@@ -325,4 +325,14 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		return userVOs;
 	}
 
+	public void updateProduct(Long productId, DealDetailsVO dealDetailsVO) {
+		log.debug("--> updateProduct");
+		getJdbcTemplate().update(SQLConstants.UPDATE_QUERY_DEALS_DETAILS,dealDetailsVO.getCategoryId(),dealDetailsVO.getProductName(),dealDetailsVO.getProductDescription(),
+				dealDetailsVO.getImageUrl(),dealDetailsVO.getDealUrl(),dealDetailsVO.getVendorName(),dealDetailsVO.getActualPrice(),
+				dealDetailsVO.getSalePrice(),dealDetailsVO.getCuponCode(),dealDetailsVO.getStatus(),dealDetailsVO.getHotDeal(),dealDetailsVO.getPopularDeal(),dealDetailsVO.getClearanceDeal(),
+				dealDetailsVO.getDisplayOrder(),dealDetailsVO.getUserId(),dealDetailsVO.getUpdatedBy(),dealDetailsVO.getPostedDate(),dealDetailsVO.getUpdatedDate(),productId);
+		log.debug("<-- updateProduct");
+		
+	}
+
 }

@@ -132,4 +132,10 @@ public class DealsDetailsService {
 		return userVO;
 	}
 
+	public void updateProduct(Long productId, DealDetailsVO dealDetailsVO) {
+		log.debug("--> updateProduct");
+		dealsDetailsDao.updateProduct(productId,dealDetailsVO);
+		log.debug("<-- updateProduct");
+	}
+
 }

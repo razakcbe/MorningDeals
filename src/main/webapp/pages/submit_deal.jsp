@@ -170,18 +170,18 @@ $(function() {
 <div id="radiobutton">
 <div id="radiobtn_left">
 <label for="hotdeals">Hot Deals:</label>&nbsp;
-<input type="radio" name="hotdealsid" id="hotdealsyes" value="Yes" autocomplete="off" tabindex="10" />Yes&nbsp;
-<input type="radio" name="hotdealsid" id="hotdealsno" value="No" autocomplete="off" tabindex="11" checked="checked"/> No
+<input type="radio" name="hotdealsid" id="hotdealsyes" value="Y" autocomplete="off" tabindex="10" />Yes&nbsp;
+<input type="radio" name="hotdealsid" id="hotdealsno" value="N" autocomplete="off" tabindex="11" checked="checked"/> No
 </div>
 <div id="radiobtn_middle">
 <label for="hotdeals">Popular Deals:</label>&nbsp;
-<input type="radio" name="populardealsid" id="populardealsyes" value="Yes" autocomplete="off" tabindex="12"/>Yes&nbsp;
-<input type="radio" name="populardealsid" id="populardealsno" value="No" autocomplete="off" tabindex="13" checked="checked"/> No
+<input type="radio" name="populardealsid" id="populardealsyes" value="Y" autocomplete="off" tabindex="12"/>Yes&nbsp;
+<input type="radio" name="populardealsid" id="populardealsno" value="N" autocomplete="off" tabindex="13" checked="checked"/> No
 </div>
 <div id="radiobtn_right">
 <label for="hotdeals">Clearnce Sale:</label>&nbsp;
-<input type="radio" name="clearncesaleid" id="clearncesaleyes" value="Yes" autocomplete="off" tabindex="14"/>Yes&nbsp;
-<input type="radio" name="clearncesaleid" id="clearncesaleidno" value="No" autocomplete="off" tabindex="15" checked="checked"/> No
+<input type="radio" name="clearncesaleid" id="clearncesaleyes" value="Y" autocomplete="off" tabindex="14"/>Yes&nbsp;
+<input type="radio" name="clearncesaleid" id="clearncesaleidno" value="N" autocomplete="off" tabindex="15" checked="checked"/> No
 </div>
 </div>
 

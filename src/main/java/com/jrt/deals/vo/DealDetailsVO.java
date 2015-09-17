@@ -165,7 +165,7 @@ public class DealDetailsVO implements Serializable {
 	}
 
 	public String getHotDeal() {
-		return hotDeal.equals("Yes") ? "Y" : "N";
+		return hotDeal.equals("Y") ? "Y" : "N";
 	}
 
 	public void setHotDeal(String hotDeal) {
@@ -173,7 +173,7 @@ public class DealDetailsVO implements Serializable {
 	}
 
 	public String getPopularDeal() {
-		return popularDeal.equals("Yes") ? "Y" : "N";
+		return popularDeal.equals("Y") ? "Y" : "N";
 	}
 
 	public void setPopularDeal(String popularDeal) {
@@ -181,7 +181,7 @@ public class DealDetailsVO implements Serializable {
 	}
 
 	public String getClearanceDeal() {
-		return clearanceDeal.equals("Yes") ? "Y" : "N";
+		return clearanceDeal.equals("Y") ? "Y" : "N";
 	}
 
 	public void setClearanceDeal(String clearanceDeal) {

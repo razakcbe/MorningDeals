@@ -9,7 +9,9 @@ package com.jrt.deals.utils;
  */
 public class SQLConstants {
 
-	public static final String UPDATE_QUERY_DEALS_DETAILS = null;
+	public static final String UPDATE_QUERY_DEALS_DETAILS = "UPDATE product "
+			+"SET category_id=?,product_name=?,product_details=?,product_image_url=?,product_deal_url=?,product_vendor=?,product_actual_price=?,product_sale_price=?,product_coupon=?,product_post_status=?,product_hot_deal=?,product_popular_deal=?, "
+					+"product_clearance_deal=?,product_display_order=?,product_user_id=?,product_updated_by=?,product_posted_dt=?,product_updated_dt=? WHERE  product_id= ?";
 	public static final String DELETE_QUERY_DEALS_DETAILS = null;
 	public static final String SELECT_DEALS_DETAILS = "select * from product where";
 	public static final String SELECT_ACTIVE_DEALS = "select * from product where PRODUCT_POST_STATUS='A' order by PRODUCT_DISPLAY_ORDER asc";

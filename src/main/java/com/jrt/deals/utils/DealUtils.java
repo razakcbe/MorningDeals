@@ -34,6 +34,7 @@ public class DealUtils {
 		String hotdealsid = params.get("hotdealsid");
 		String populardealsid = params.get("populardealsid");
 		String clearncesaleid = params.get("clearncesaleid");
+		String status = params.get("status");
 		dealDetailsVO.setProductName(pname);
 		dealDetailsVO.setProductDescription(pmessage);
 		dealDetailsVO.setImageUrl(imageURL);
@@ -46,6 +47,7 @@ public class DealUtils {
 		dealDetailsVO.setHotDeal(hotdealsid);
 		dealDetailsVO.setPopularDeal(populardealsid);
 		dealDetailsVO.setClearanceDeal(clearncesaleid);
+		dealDetailsVO.setStatus(status);
 		return dealDetailsVO;
 	}
 

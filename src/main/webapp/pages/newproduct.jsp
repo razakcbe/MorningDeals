@@ -115,9 +115,9 @@
             </li>          
         </ul>
                
-        <div class="dr"><span></span></div>
+        <!-- <div class="dr"><span></span></div>
         
-        <div class="widget-fluid">
+         <div class="widget-fluid">
             <div id="menuDatepicker"></div>
         </div>
         
@@ -129,7 +129,7 @@
                 <input id="appendedInputButton" style="width: 118px;" type="text"><button class="btn" type="button">Search</button>
             </div>            
             
-        </div>
+        </div> -->
         
         <div class="dr"><span></span></div>        
  
@@ -205,7 +205,7 @@
                         <div class="isw-list"></div>
                         <h1>New Product</h1>
                     </div>
-                    <form name="jayaram" id="jayaram-form" method="post" action="createDeal">
+                    <form name="jayaram" id="jayaram-form" method="post" action="createProductAdmin">
                     <div class="block-fluid">
                     	<div class="row-form clearfix">
                             <div class="span2">Product Name:</div>

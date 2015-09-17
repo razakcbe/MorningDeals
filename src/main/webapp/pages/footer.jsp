@@ -43,17 +43,15 @@
 				</form>
 			</div>
 			<div id="footer_right">
-				<h3 style="padding-left: 32px;">Social Media</h3>
+				<h3 style="padding-left: 52px;">Social Media</h3>
 				<div id="social_right">
 					<!----- Social Right start --->
 					<a href="https://www.facebook.com/morningdealss" target="_blank"><div class="fb-icon-bg"></div>
-						<div class="fb-bg"></div></a> <a href="https://twitter.com/morningdealss" target="_blank">
-						<div class="twi-icon-bg"></div>
-						<div class="twi-bg"></div>
-							</a> <a href="https://plus.google.com/u/0/105806461588072201873" target="_blank">
-						<div class="g-icon-bg"></div>
-						<div class="g-bg"></div>
-					</a>
+						</a>
+					<a href="https://twitter.com/morningdealss" target="_blank"><div class="twi-icon-bg"></div>
+						</a> 
+					<a href="https://plus.google.com/u/0/105806461588072201873" target="_blank"><div class="g-icon-bg"></div>
+						</a>
 				</div>
 				<!----- Social Right End --->
 			</div>

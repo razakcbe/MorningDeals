@@ -290,4 +290,32 @@ public class DealsDetailsController {
 		return retunrStr;
 	}
 	
+	@RequestMapping(value = "createProductAdmin", method = RequestMethod.POST)
+	public String createDealByAdmin(Model model,@RequestParam Map<String,String> allRequestParams,HttpServletRequest request) {
+		log.debug("--> createDealByAdmin:"+allRequestParams);
+		DealDetailsVO dealDetailsVO = DealUtils.getDealDetailsVO(allRequestParams);
+		dealDetailsVO.setStatus("A");
+		UserVO userVO = (UserVO) request.getSession().getAttribute("userVO");
+		if(userVO != null){
+			dealDetailsVO.setUserId(userVO.getUserId());
+		}
+		dealsDetailsService.insertDeal(dealDetailsVO);
+		log.debug("<-- createDealByAdmin");
+		return createProduct();
+	}
+	
+	@RequestMapping(value = "doadminreview", method = RequestMethod.POST)
+	public String doAdminReview(Model model,@RequestParam Map<String,String> allRequestParams,HttpServletRequest request) {
+		log.debug("--> doAdminReview:"+allRequestParams);
+		Long productId = Long.parseLong(allRequestParams.get("productId"));
+		DealDetailsVO dealDetailsVO = DealUtils.getDealDetailsVO(allRequestParams);
+		UserVO userVO = (UserVO) request.getSession().getAttribute("userVO");
+		if(userVO != null){
+			dealDetailsVO.setUserId(userVO.getUserId());
+		}
+		dealsDetailsService.updateProduct(productId,dealDetailsVO);
+		log.debug("<-- doAdminReview");
+		return createProduct();
+	}
+	
 }
