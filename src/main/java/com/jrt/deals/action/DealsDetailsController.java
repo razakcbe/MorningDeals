@@ -140,7 +140,7 @@ public class DealsDetailsController {
 		DealDetailsVO dealDetailsVO = DealUtils.getDealDetailsVO(allRequestParams);
 		UserVO userVO = (UserVO) request.getSession().getAttribute("userVO");
 		if(userVO != null){
-			dealDetailsVO.setUserId(userVO.getUserName());
+			dealDetailsVO.setUserId(userVO.getUserId());
 		}
 		dealsDetailsService.insertDeal(dealDetailsVO);
 		model.addAttribute("message", "Thank you for Submitting Deal.We will review and show in the deals!!");

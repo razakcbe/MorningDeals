@@ -205,195 +205,216 @@
                         <div class="isw-list"></div>
                         <h1>New Product</h1>
                     </div>
-                    <div class="block-fluid">                        
-                                                <div class="row-form clearfix">
+                    <form name="jayaram" id="jayaram-form" method="post" action="createDeal">
+                    <div class="block-fluid">
+                    	<div class="row-form clearfix">
+                            <div class="span2">Product Name:</div>
+                            <div class="span10">
+                           <input type="text" name="pname" id="pname1" placeholder="Product Name" autocomplete="off" tabindex="1" required />
+                            </div>
+                        </div>                        
+                       
+						<div class="row-form clearfix">
+                            <div class="span2">Description:</div>
+                            <div class="span10">
+                            <textarea name="pmessage" id="pmessage" placeholder="Product Description..." tabindex="2" style="height: 300px;"></textarea><br/>	
+                            </div>
+                        </div>  
+						
+						<div class="row-form clearfix">
+                            <div class="span2">Image URL:</div>
+                            <div class="span10">
+                           <input type="url" name="imageURL" id="imageURL" placeholder="Image URL.." autocomplete="off" tabindex="3" style="width: 100%;" required/>		</div>
+                        </div>      
+                                                
+                         <div class="row-form clearfix">
+                            <div class="span2">Destination URL:</div>
+                            <div class="span10">
+                            <input type="url" name="destinationURL" id="destinationURL" placeholder="Destination URL" autocomplete="off" tabindex="4" style="width: 100%;" required/>			</div>
+                        </div>                                                               
+                        
+                         <div class="row-form clearfix">
                             <div class="span2">Select Product</div>
                             <div class="span10">
-                                <select name="select" id="s2_1" style="width: 100%;">
-                                    <option value="0">choose a option...</option>
+                                <select name="categoryId" id="categoryId" tabindex="5" style="width: 100%;">
+                                    <option value="0">Select Your Product...</option>
                                     <optgroup label="Electronics">
-                                            <option value="1">Mobile Accessories</option>
-                                            <option value="2">Laptops</option>
-                                            <option value="3">Tablet Accessories</option>
-                                            <option value="4">Computer Accessories</option>
-                                            <option value="5">Camera Accessories</option>
-                                            <option value="6">Audio & Video</option>
-                                            <option value="7">Gaming</option>
-                                            <option value="8">Televisions</option>
-                                            <option value="9">Large Appliances</option>
-                                            <option value="10">Small Appliances</option>
-                                            <option value="11">Kitchen Appliances</option>
-                                            <option value="12">Healthcare Appliances</option>                                    </optgroup>
+                                            <option value="10001">Mobile Accessories</option>
+                                            <option value="10002">Laptops</option>
+                                            <option value="10003">Tablet Accessories</option>
+                                            <option value="10004">Computer Accessories</option>
+                                            <option value="10005">Camera Accessories</option>
+                                            <option value="10006">Audio & Video</option>
+                                            <option value="10007">Gaming</option>
+                                            <option value="10008">Televisions</option>
+                                            <option value="10009">Large Appliances</option>
+                                            <option value="10010">Small Appliances</option>
+                                            <option value="10011">Kitchen Appliances</option>
+                                            <option value="10012">Healthcare Appliances</option>                                    </optgroup>
 
                                     <optgroup label="Men">
-                                            <option value="13">Clothing</option>
-                                            <option value="14">Footwear</option>
-                                            <option value="15">Watches</option>
-                                            <option value="16">Men's Accessories</option>
-                                            <option value="17">Bags, Belts & Wallets</option>
-                                            <option value="18">Contact Lenses</option>
-                                            <option value="19">Sunglasses</option>
-                                            <option value="20">Spectacle Frames</option>
-                                            <option value="21">Fragrances</option>
-                                            <option value="22">Grooming & Wellness</option>
+                                            <option value="10013">Clothing</option>
+                                            <option value="10014">Footwear</option>
+                                            <option value="10015">Watches</option>
+                                            <option value="10016">Men's Accessories</option>
+                                            <option value="10017">Bags, Belts & Wallets</option>
+                                            <option value="10018">Contact Lenses</option>
+                                            <option value="10019">Sunglasses</option>
+                                            <option value="10020">Spectacle Frames</option>
+                                            <option value="10021">Fragrances</option>
+                                            <option value="10022">Grooming & Wellness</option>
                                     </optgroup>
                                     <optgroup label="Women">
-                                            <option value="22">Clothing</option>
-                                            <option value="23">Footwear</option>
-                                            <option value="24">Watches</option>
-                                            <option value="25">Jewellery</option>
-                                            <option value="26">Bags, Belts & Wallets</option>
-                                            <option value="27">Contact Lenses</option>
-                                            <option value="28">Sunglasses</option>
-                                            <option value="29">Spectacle Frames</option>
-                                            <option value="30">Beauty & Personal Care</option>
-                                            <option value="31">Perfumes</option>
-                                            <option value="32">Wellness</option>                                    </optgroup>                                 
+                                            <option value="10022">Clothing</option>
+                                            <option value="10023">Footwear</option>
+                                            <option value="10024">Watches</option>
+                                            <option value="10025">Jewellery</option>
+                                            <option value="10026">Bags, Belts & Wallets</option>
+                                            <option value="10027">Contact Lenses</option>
+                                            <option value="10028">Sunglasses</option>
+                                            <option value="10029">Spectacle Frames</option>
+                                            <option value="10030">Beauty & Personal Care</option>
+                                            <option value="10031">Perfumes</option>
+                                            <option value="10032">Wellness</option>                                    </optgroup>                                 
 
                                     <optgroup label="Baby Products">
-                                            <option value="33">Clothing</option>
-                                            <option value="34">Footwear</option>
-                                            <option value="35">Toys</option>
-                                            <option value="36">Baby Care</option>
-                                            <option value="37">School Supplies</option>
-                                            <option value="38">Kids Sports</option>
-                                            <option value="39">Watches</option>
-                                            <option value="40">Books</option>
-                                            <option value="41">Movies</option>
-                                            <option value="42">Sunglasses</option>
+                                            <option value="10033">Clothing</option>
+                                            <option value="10034">Footwear</option>
+                                            <option value="10035">Toys</option>
+                                            <option value="10036">Baby Care</option>
+                                            <option value="10037">School Supplies</option>
+                                            <option value="10038">Kids Sports</option>
+                                            <option value="10039">Watches</option>
+                                            <option value="10040">Books</option>
+                                            <option value="10041">Movies</option>
+                                            <option value="10042">Sunglasses</option>
                                     </optgroup>                                 
 
                                     <optgroup label="Home Products">
-                                            <option value="43">Kitchen & Dining</option>
-                                            <option value="44">Home Furnishing</option>
-                                            <option value="45">Home Appliances</option>
-                                            <option value="46">Kitchen Appliances</option>
-                                            <option value="47">Furniture</option>
-                                            <option value="48">Tools & Hardware</option>
-                                            <option value="49">Home Specials</option>
-                                            <option value="50">Bath Essential</option>
-                                            <option value="51">Household Supplies</option>
-                                            <option value="52">Housekeeping & Laundry</option>
-                                            <option value="53">Pet Supplies</option>
+                                            <option value="10043">Kitchen & Dining</option>
+                                            <option value="10044">Home Furnishing</option>
+                                            <option value="10045">Home Appliances</option>
+                                            <option value="10046">Kitchen Appliances</option>
+                                            <option value="10047">Furniture</option>
+                                            <option value="10048">Tools & Hardware</option>
+                                            <option value="10049">Home Specials</option>
+                                            <option value="10050">Bath Essential</option>
+                                            <option value="10051">Household Supplies</option>
+                                            <option value="10052">Housekeeping & Laundry</option>
+                                            <option value="10053">Pet Supplies</option>
                                      </optgroup>                                 
 
                                     <optgroup label="Book & Media">
-                                            <option value="54">Books</option>
-                                            <option value="55">eLearning</option>
-                                            <option value="56">eBooks & ePrints</option>
-                                            <option value="57">Music</option>
-                                            <option value="58">Movies & TV Shows</option>
-                                            <option value="59">Gaming</option>
-                                            <option value="60">Stationary</option>
-                                            <option value="61">Office Equipments</option>
-											<option value="62">Exam Supplies</option>
+                                            <option value="10054">Books</option>
+                                            <option value="10055">eLearning</option>
+                                            <option value="10056">eBooks & ePrints</option>
+                                            <option value="10057">Music</option>
+                                            <option value="10058">Movies & TV Shows</option>
+                                            <option value="10059">Gaming</option>
+                                            <option value="10060">Stationary</option>
+                                            <option value="10061">Office Equipments</option>
+											<option value="10062">Exam Supplies</option>
                                     </optgroup>                                 
 
                                     <optgroup label="Sports">
-											<option value="63">Sports Clothing</option>
-											<option value="64">Sports Footwear</option>
-											<option value="65">Fitness & BodyBuilding</option>
-											<option value="66">Cardio Equipments</option>
-											<option value="67">Sports</option>
-											<option value="68">Outdoors</option>                                    </optgroup>                                 
+											<option value="10063">Sports Clothing</option>
+											<option value="10064">Sports Footwear</option>
+											<option value="10065">Fitness & BodyBuilding</option>
+											<option value="10066">Cardio Equipments</option>
+											<option value="10067">Sports</option>
+											<option value="10068">Outdoors</option>                                    </optgroup>                                 
 
                                     <optgroup label="Bike & Car Spares">
-											<option value="69">Car Essentials</option>
-											<option value="70">Bike Essentials</option>
-											<option value="71">Car Electronics</option>
-											<option value="72">Tyres</option>
-											<option value="73">Lighting</option>
-											<option value="74">Styling</option>
-											<option value="75">Spares & Equipment</option>
-											<option value="76">Lubricants & Oils</option>
-											<option value="77">Helmets & Protective Wear</option>
-											<option value="78">Vehicle Covers</option>
-											<option value="79">Washing & Cleaning</option>
-											<option value="80">Breakdown Equipment</option>
-											<option value="81">Car Freshness</option>
-                                    </optgroup>                                 
+											<option value="10069">Car Essentials</option>
+											<option value="10070">Bike Essentials</option>
+											<option value="10071">Car Electronics</option>
+											<option value="10072">Tyres</option>
+											<option value="10073">Lighting</option>
+											<option value="10074">Styling</option>
+											<option value="10075">Spares & Equipment</option>
+											<option value="10076">Lubricants & Oils</option>
+											<option value="10077">Helmets & Protective Wear</option>
+											<option value="10078">Vehicle Covers</option>
+											<option value="10079">Washing & Cleaning</option>
+											<option value="10080">Breakdown Equipment</option>
+											<option value="10081">Car Freshness</option>
+                                    </optgroup>                                
                                 </select>
                             </div>
                         </div>           
 
-						<div class="row-form clearfix">
-                            <div class="span2">Description:</div>
-                            <div class="span10">
-                            <textarea id="wysiwyg" name="text" style="height: 300px;"></textarea>
-                            </div>
-                        </div>  
-                        
-                         <div class="row-form clearfix">
-                            <div class="span2">Destination URL:</div>
-                            <div class="span10">
-                            <input type="text" placeholder="Destination URL..."/>			</div>
-                        </div>                                                               
-                        
-                         <div class="row-form clearfix">
-                            <div class="span2">Image URL:</div>
-                            <div class="span10">
-                            <input type="text" placeholder="Image URL..."/>			</div>
-                        </div>                                                               
-                        
-
 						 <div class="row-form clearfix">
                             <div class="span2">Vendor Name:</div>
                             <div class="span10">
-                            <input type="text" placeholder="Vendor Name..."/></div>
+                           <input type="text" name="vname" id="vname" placeholder="Vendor Name" autocomplete="off" tabindex="6" required/></div>
                         </div>                                                               
 						
                          <div class="row-form clearfix">
                             <div class="span2">Actual Price:</div>
                             <div class="span10">
-                            <input type="text" placeholder="Actual Price..."/></div>
+                            <input type="number" name="aprice" id="aprice" placeholder="Actual price" tabindex="7" required style="width: 100%;"/></div>
                         </div>                                                               
 						
                         <div class="row-form clearfix">
                             <div class="span2">Sale Price:</div>
                             <div class="span10">
-                            <input type="text" placeholder="Sale Price..."/></div>
+                            <input type="number" name="sprice" id="sprice" placeholder="Sale price" tabindex="8" required style="width: 100%;"/></div>
                         </div>                                                               
 						
                         <div class="row-form clearfix">
                             <div class="span2">Coupon Code:</div>
                             <div class="span10">
-                            <input type="text" placeholder="Coupon Code..."/></div>
+                            <input type="text" name="coupon" id="coupon" placeholder="Coupon Code" autocomplete="off" tabindex="9" /></div>
                         </div>                                                               
 
                         <div class="row-form clearfix">
                             <div class="span2">Hot Deals:</div>
                             <div class="span3">
                                 <label class="checkbox inline">
-                                    <input type="radio" name="hotdeal"/>Yes
+                                    <input type="radio" name="hotdealsid" id="hotdealsyes"/>Yes
                                 </label>
                                 <label class="checkbox inline">
-                                    <input type="radio" name="hotdeal" checked="checked"/>No
+                                    <input type="radio" name="hotdealsid" id="hotdealsno" checked="checked"/>No
                                 </label>
                             </div>
                         </div>                         
 
                         <div class="row-form clearfix">
-                            <div class="span2">Clearance Sales:</div>
+                            <div class="span2">Popular Deals:</div>
                             <div class="span3">
                                 <label class="checkbox inline">
-                                    <input type="radio" name="clearsale"/>Yes
+                                    <input type="radio" name="populardealsid" id="populardealsyes"/>Yes
                                 </label>
                                 <label class="checkbox inline">
-                                    <input type="radio" name="clearsale" checked="checked"/>No
+                                    <input type="radio" name="populardealsid" id="populardealsno" checked="checked"/>No
                                 </label>
                             </div>
                         </div>                         
-
+	
+						<div class="row-form clearfix">
+                            <div class="span2">Clearnce Sale:</div>
+                            <div class="span3">
+                                <label class="checkbox inline">
+                                    <input type="radio" name="clearncesaleid" id="clearncesaleyes"/>Yes
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="radio" name="clearncesaleid" id="clearncesaleidno" checked="checked"/>No
+                                </label>
+                            </div>
+                        </div> 
+                        
                         <div class="row-form clearfix">
                             <div class="span3">Image Upload (optional):</div>
                             <div class="span7">                                                              
-                                <input type="file" name="file"/>
+                                <input type="file" name="fileupload"   id="fileupload"/>
                             </div>
                         </div> 
 
-                    <div class="block" style="padding-left:470px;">                           
-                        <a href="#dModal" role="button" class="btn" data-toggle="modal">Submit</a>
-                        <a href="#dModal" role="button" class="btn" data-toggle="modal">Cancel</a>
+                    <div class="block">                           
+                       <!--  <a href="#dModal" role="button" type="submit" class="btn" data-toggle="modal">Submit</a>
+                        <a href="#dModal" role="button" type="reset" class="btn" data-toggle="modal">Cancel</a> -->
+                     	<input type="submit" name="osx" id="submitbtn" class="btn" tabindex="17" value="Submit">
+						<input type="reset" name="reset" id="resetbtn" class="btn" value="Reset">
                     </div>
 
   <!-- Bootrstrap default dialog -->
@@ -406,6 +427,7 @@
             <p>Thanks For Submitting</p>
         </div>
     </div>                      </div>
+    </form>
                 </div>
 
             </div>

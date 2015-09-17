@@ -163,7 +163,7 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 				.get("PRODUCT_CLEARANCE_DEAL"));
 		dealDetailsVO.setDisplayOrder((Integer) row
 				.get("PRODUCT_DISPLAY_ORDER"));
-		dealDetailsVO.setUserId((String) row.get("PRODUCT_USER_ID"));
+		dealDetailsVO.setUserId((Integer) row.get("PRODUCT_USER_ID"));
 		dealDetailsVO.setUpdatedBy((String) row.get("PRODUCT_UPDATED_BY"));
 		dealDetailsVO.setPostedDate((Date) row.get("PRODUCT_POSTED_DT"));
 		dealDetailsVO.setUpdatedDate((Date) row.get("PRODUCT_UPDATED_DT"));

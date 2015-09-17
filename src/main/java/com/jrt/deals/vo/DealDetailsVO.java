@@ -28,7 +28,7 @@ public class DealDetailsVO implements Serializable {
 	private String popularDeal;
 	private String clearanceDeal;
 	private int displayOrder;
-	private String userId;
+	private int userId;
 	private String updatedBy;
 
 	private Date postedDate;
@@ -43,7 +43,7 @@ public class DealDetailsVO implements Serializable {
 			String imageUrl, String vendorName, BigDecimal actualPrice,
 			BigDecimal salePrice, String cuponCode, String status,
 			String hotDeal, String popularDeal, String clearanceDeal,
-			int displayOrder, String userId, String updatedBy, Date postedDate,
+			int displayOrder, int userId, String updatedBy, Date postedDate,
 			Date updatedDate) {
 		this.productId = productId;
 		this.categoryId = categoryId;
@@ -196,13 +196,6 @@ public class DealDetailsVO implements Serializable {
 		this.displayOrder = displayOrder;
 	}
 
-	public String getUserId() {
-		return userId == null ? "Test" : userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
 	public String getUpdatedBy() {
 		return updatedBy == null?"Test":updatedBy;
 	}
@@ -220,6 +213,14 @@ public class DealDetailsVO implements Serializable {
 	}
 	public void setUpdatedDate(Date updatedDate) {
 		this.updatedDate = updatedDate;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 }

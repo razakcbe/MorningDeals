@@ -53,7 +53,7 @@ $(function() {
 
 <div id="wrapping" class="clearfix">
 
-<input type="text" name="pname" id="pname1" placeholder="Product Name" autocomplete="off" tabindex="1" class="txtinput" required>
+<input type="text" name="pname" id="pname1" placeholder="Product Name" autocomplete="off" tabindex="1" class="txtinput" required />
 <textarea name="pmessage" id="pmessage" placeholder="Product Description..." tabindex="2" class="txtblock"></textarea><br/>	
 <input type="url" name="imageURL" id="imageURL" placeholder="Image URL.." autocomplete="off" tabindex="3" class="txtinput" required/>
 <input type="url" name="destinationURL" id="destinationURL" placeholder="Destination URL" autocomplete="off" tabindex="4" class="txtinput" required/>
