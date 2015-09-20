@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -92,7 +93,7 @@ public class DealsDetailsController {
 	public String getProductDesc(Model model,@RequestParam("productId") String productId ) {
 		log.debug("--> getProductDesc");
 		DealDetailsVO dealDetailsVO = dealsDetailsService.findDeal(new Long(productId));
-		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findRelatedDeals(productId);
+		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findRelatedDeals(new Long(productId));
 		log.debug("dealDetailsVOs::"+dealDetailsVOs.size());
 		model.addAttribute("dealDetailsVO", dealDetailsVO);
 		model.addAttribute("relatedDeals", dealDetailsVOs);
@@ -140,6 +141,11 @@ public class DealsDetailsController {
 		DealDetailsVO dealDetailsVO = DealUtils.getDealDetailsVO(allRequestParams);
 		UserVO userVO = (UserVO) request.getSession().getAttribute("userVO");
 		if(userVO != null){
+			if(userVO.isAdminUser()){
+				dealDetailsVO.setStatus("A");
+			}else{
+				dealDetailsVO.setStatus("P");
+			}
 			dealDetailsVO.setUserId(userVO.getUserId());
 		}
 		dealsDetailsService.insertDeal(dealDetailsVO);
@@ -179,6 +185,8 @@ public class DealsDetailsController {
 				model.addAttribute("allDeals", dealDetailsVOs);
 				model.addAttribute("topDeals", topDealDetailsVOs);
 			}
+		}else{
+			model.addAttribute("message", "Invalid Login, User Name/Email or Password Invalid");
 		}
 		log.debug("<-- authenticateUser:returnStr"+returnStr);
 		return returnStr;
@@ -317,5 +325,12 @@ public class DealsDetailsController {
 		log.debug("<-- doAdminReview");
 		return createProduct();
 	}
-	
+
+	@ExceptionHandler(Exception.class)
+	public ModelAndView handleAllException(Exception ex) {
+		ModelAndView model = new ModelAndView("error");
+		model.addObject("errorMessage", "Fatal Error, please contact System Administrator!");
+		return model;
+
+	}
 }

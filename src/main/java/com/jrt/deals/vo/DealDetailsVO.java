@@ -157,7 +157,7 @@ public class DealDetailsVO implements Serializable {
 	}
 
 	public String getStatus() {
-		return status == null ? "A" : status;
+		return status == null ? "P" : status;
 	}
 
 	public void setStatus(String status) {

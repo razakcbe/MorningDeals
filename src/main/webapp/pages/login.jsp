@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -30,6 +31,7 @@
 						name="form-horizontal" method="post" action="authenticate">
 						<p> 
                                     <label for="username" class="uname" data-icon="u" > Your email or username </label>
+                                    <font color="red">${message}</font>
                                     <input id="username" name="inputEmail" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
                                 </p>
                                 <p> 

@@ -173,11 +173,11 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 	@Transactional(readOnly = true)
 	public List<DealDetailsVO> findTopDeals() {
 		log.debug("--> findTopDeals");
-		log.debug("Query: " + SQLConstants.SELECT_TOP_DEALS);
+		log.debug("Query: " + SQLConstants.SELECT_ALL_POPULAR_DEALS);
 		List<DealDetailsVO> detailsVos = new ArrayList<DealDetailsVO>();
 		try {
 			List<Map<String, Object>> rows = getJdbcTemplate().queryForList(
-					SQLConstants.SELECT_TOP_DEALS);
+					SQLConstants.SELECT_ALL_POPULAR_DEALS);
 			DealDetailsVO dealDetailsVO = null;
 			for (Map<String, Object> row : rows) {
 				dealDetailsVO = populateDealDetails(row);
@@ -192,15 +192,24 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 	}
 
 	@Transactional(readOnly = true)
-	public List<DealDetailsVO> findRelatedDeals(String productId) {
+	public List<DealDetailsVO> findRelatedDeals(Long productId) {
 		log.debug("--> findRelatedDeals");
 		log.debug("Query: " + SQLConstants.SELECT_RELATED_DEALS);
-		/*
-		 * List<DealDetailsVO> detailsVos = getJdbcTemplate().queryForList(
-		 * SQLConstants.SELECT_ALL_QUERY_DEALS_DETAILS, DealDetailsVO.class);
-		 */
+		List<DealDetailsVO> detailsVos = new ArrayList<DealDetailsVO>();
+		try {
+			List<Map<String, Object>> rows = getJdbcTemplate().queryForList(
+					SQLConstants.SELECT_RELATED_DEALS,productId,productId);
+			DealDetailsVO dealDetailsVO = null;
+			for (Map<String, Object> row : rows) {
+				dealDetailsVO = populateDealDetails(row);
+				detailsVos.add(dealDetailsVO);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+
+		}
 		log.debug("<-- findRelatedDeals");
-		return Mocker.getDetailsVos3();
+		return detailsVos;
 	}
 
 	public void insertUser(UserVO userVO) {
@@ -280,7 +289,7 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		String password = inputMap.get("inputPassword");
 		String saltedPassword;
 		try {
-			saltedPassword = password;SHAHashing.getHashedPassword(password);
+			saltedPassword = SHAHashing.getHashedPassword(password);
 			String sql = SQLConstants.SELECT_USER.replace("email",userName).replace("saltedPassword", saltedPassword);
 			List<Map<String, Object>> rows = getJdbcTemplate().queryForList(sql);
 			if(rows != null && rows.size() > 0){
@@ -327,10 +336,14 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 
 	public void updateProduct(Long productId, DealDetailsVO dealDetailsVO) {
 		log.debug("--> updateProduct");
+		try {
 		getJdbcTemplate().update(SQLConstants.UPDATE_QUERY_DEALS_DETAILS,dealDetailsVO.getCategoryId(),dealDetailsVO.getProductName(),dealDetailsVO.getProductDescription(),
 				dealDetailsVO.getImageUrl(),dealDetailsVO.getDealUrl(),dealDetailsVO.getVendorName(),dealDetailsVO.getActualPrice(),
 				dealDetailsVO.getSalePrice(),dealDetailsVO.getCuponCode(),dealDetailsVO.getStatus(),dealDetailsVO.getHotDeal(),dealDetailsVO.getPopularDeal(),dealDetailsVO.getClearanceDeal(),
 				dealDetailsVO.getDisplayOrder(),dealDetailsVO.getUserId(),dealDetailsVO.getUpdatedBy(),dealDetailsVO.getPostedDate(),dealDetailsVO.getUpdatedDate(),productId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
 		log.debug("<-- updateProduct");
 		
 	}

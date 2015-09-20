@@ -57,7 +57,12 @@ public class DealUtils {
 		userVO.setUserName(emailId);
 		userVO.setUserEmailId(emailId);
 		userVO.setRoleId(1002);
-		userVO.setUserPwd("dummy");
+		try {
+			userVO.setUserPwd(SHAHashing.getHashedPassword("dummy"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return userVO;
 	}
 	

@@ -59,11 +59,11 @@
 			<div id="fline"></div>
 			<div class="categories_links">
 				<!--- Catergory Links Start --->
-				<a href="home">Home</a>&nbsp;| &nbsp;<a href="dealsByCateogry?categoryId=10001">Electronics</a>&nbsp;|
-				&nbsp;<a href="dealsByCateogry?categoryId=10002">Laptops</a>&nbsp;| &nbsp;<a href="dealsByCateogry?categoryId=10003">Mobile</a>&nbsp;|
-				&nbsp;<a href="dealsByCateogry?categoryId=10009">Televisions</a>&nbsp;| &nbsp;<a href="dealsByCateogry?categoryId=10014">Men</a>&nbsp;|
-				&nbsp;<a href="dealsByCateogry?categoryId=10025">Women</a>&nbsp;| &nbsp;<a href="dealsByCateogry?categoryId=10037">Baby	Products</a>
-				&nbsp;| &nbsp;<a href="dealsByCateogry?categoryId=10048">Home & Furniture</a>&nbsp;|
+				<a href="home">Home</a>&nbsp;| &nbsp;<a href="dealsByCateogry?categoryId=20001">Electronics</a>&nbsp;|
+				&nbsp;<a href="dealsByCateogry?categoryId=10001">Laptops</a>&nbsp;| &nbsp;<a href="dealsByCateogry?categoryId=10002">Mobile</a>&nbsp;|
+				&nbsp;<a href="dealsByCateogry?categoryId=10008">Televisions</a>&nbsp;| &nbsp;<a href="dealsByCateogry?categoryId=20002">Men</a>&nbsp;|
+				&nbsp;<a href="dealsByCateogry?categoryId=20003">Women</a>&nbsp;| &nbsp;<a href="dealsByCateogry?categoryId=20004">Baby	Products</a>
+				&nbsp;| &nbsp;<a href="dealsByCateogry?categoryId=10045">Home & Furniture</a>&nbsp;|
 				&nbsp;<a href="travelDeals">Travel Deals</a>&nbsp;| &nbsp;<a href="cupons">Coupons</a><br />
 				<a href="#">About Morning deals</a>&nbsp;| &nbsp;<a
 					href="privacy">Privacy Policy</a>&nbsp;| &nbsp;<a

@@ -41,7 +41,7 @@
 						&#8360;${dealDetailsVO.salePrice}</strong>
 					${dealDetailsVO.productDescription}
 					<p>
-						<button type="submit" class="buynow">Buy Now</button>
+						<button type="submit" class="buynow" onclick="javascript: window.open('${dealDetailsVO.dealUrl}');">Buy Now</button>
 					</p>
 
 				</div>

@@ -74,7 +74,7 @@ public class DealsDetailsService {
 		return dealDetailsVOList;
 	}
 
-	public List<DealDetailsVO> findRelatedDeals(String productId) {
+	public List<DealDetailsVO> findRelatedDeals(Long productId) {
 		log.debug("--> findRelatedDeals");
 		List<DealDetailsVO> dealDetailsVOList = dealsDetailsDao
 				.findRelatedDeals(productId);

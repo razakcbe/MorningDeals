@@ -123,7 +123,7 @@
 							<a class="sale_price list_saleprice" href="prod-desc.html">&#8377;.${listValue.salePrice}</a>
 						</div>
 					</div>
-					<p>${listValue.productDescription}</p>
+					<%-- <p>${listValue.productDescription}</p> --%>
 					<span class="btn_buynow listbtn_buynow"><a
 						href="productDesc?productId=${listValue.productId}">Buy Now</a></span>
 				</div>
