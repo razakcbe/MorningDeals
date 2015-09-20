@@ -19,6 +19,8 @@ public class SQLConstants {
 	public static final String SELECT_ALL_HOT_DEALS = "select * from product where product_post_status='A' and product_hot_deal = 'Y' order by product_display_order asc";
 	public static final String SELECT_ALL_POPULAR_DEALS = "select * from product where product_post_status='A' and product_popular_deal = 'Y' order by product_display_order asc";
 	public static final String SELECT_ALL_CLEARANCE_DEALS = "select * from product where product_post_status='A' and product_clearance_deal = 'Y' order by product_display_order asc";
+	
+	public static final String SELECT_FREE_TEXT_DEALS = "select * from product  where ";
 	public static final String SELECT_TOP_DEALS = "select * from product where product_post_status='T' order by product_display_order asc";
 	public static final String INSERT_DEAL = "Insert into product(CATEGORY_ID ,PRODUCT_NAME,PRODUCT_DETAILS,PRODUCT_IMAGE_URL,PRODUCT_DEAL_URL,PRODUCT_VENDOR,PRODUCT_ACTUAL_PRICE,PRODUCT_SALE_PRICE,PRODUCT_COUPON,PRODUCT_POST_STATUS,PRODUCT_HOT_DEAL,PRODUCT_POPULAR_DEAL,PRODUCT_CLEARANCE_DEAL,PRODUCT_DISPLAY_ORDER,PRODUCT_USER_ID, PRODUCT_UPDATED_BY, PRODUCT_UPDATED_DT, PRODUCT_POSTED_DT) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	public static final String SELECT_DEALS_BY_CAT = "select * from product where category_id=? order by product_display_order asc";

@@ -18,6 +18,12 @@
 	type="text/javascript"></script>
 <script src="js/script.js"></script>
 
+<script>
+	function submitSearchProducts(formField){
+		document.forms[0].action ="freeTextSearch"
+		document.forms[0].submit();
+	}
+</script>
 </head>
 <div class="header_wrapper">
 	<!--- Header wrapper Started --->
@@ -177,7 +183,7 @@
 				<li><a href="postDeal">Submit Deal</a></li>
 				<li style="float: right;">
 					<form>
-						<input type="search" placeholder="Search Prodcuts">
+						<input type="search" name="freeSeachText" placeholder="Search Prodcuts" value = "${searchStr} "onblur="submitSearchProducts(this)">
 					</form>
 				</li>
 			</ul>

@@ -234,10 +234,10 @@
                         </div>                                                               
                         
                          <div class="row-form clearfix">
-                            <div class="span2">Select Product</div>
+                            <div class="span2">Select Category</div>
                             <div class="span10">
                                 <select name="categoryId" id="categoryId" tabindex="5" style="width: 100%;">
-                                    <option value="0">Select Your Product...</option>
+                                    <option value="0">Select Your Category...</option>
                                     <optgroup label="Electronics">
                                             <option value="10001">Mobile Accessories</option>
                                             <option value="10002">Laptops</option>
@@ -380,7 +380,7 @@
                         </div>                         
 
                         <div class="row-form clearfix">
-                            <div class="span2">Popular Deals:</div>
+                            <div class="span2">Travel Deals:</div>
                             <div class="span3">
                                 <label class="checkbox inline">
                                     <input type="radio" name="populardealsid" id="populardealsyes"/>Yes

@@ -71,6 +71,18 @@ public class DealsDetailsController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "freeTextSearch", method = RequestMethod.GET)
+	public String getFreeTextSearch(Model model,@RequestParam("freeSeachText") String freeSeachText) {
+		log.debug("--> getFreeTextSearch::"+freeSeachText);
+		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.getFreeTextSearch(freeSeachText);
+		List<DealDetailsVO> topDealDetailsVOs = dealsDetailsService.findTopDeals();
+		model.addAttribute("allDeals", dealDetailsVOs);
+		model.addAttribute("topDeals", topDealDetailsVOs);
+		model.addAttribute("searchStr", freeSeachText);
+		log.debug("<-- getFreeTextSearch:dealDetailsVOs"+dealDetailsVOs);
+		return "home";
+	}
+	
 	@RequestMapping(value = "dealsByCateogry", method = RequestMethod.GET)
 	public String getDealsByCategory(Model model,@RequestParam("categoryId") String categoryId ) {
 		log.debug("--> getDeals");

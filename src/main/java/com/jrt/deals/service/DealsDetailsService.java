@@ -73,6 +73,13 @@ public class DealsDetailsService {
 		log.debug("<-- findTopDeals");
 		return dealDetailsVOList;
 	}
+	
+	public List<DealDetailsVO> getFreeTextSearch(String freeSeachText) {
+		log.debug("--> getFreeTextSearch");
+		List<DealDetailsVO> dealDetailsVOList = dealsDetailsDao.getFreeTextSearch(freeSeachText);
+		log.debug("<-- getFreeTextSearch");
+		return dealDetailsVOList;
+	}
 
 	public List<DealDetailsVO> findRelatedDeals(Long productId) {
 		log.debug("--> findRelatedDeals");

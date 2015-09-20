@@ -24,5 +24,6 @@ public interface IDealsDetailsDao {
 	public UserVO authenticateUser(Map<String,String> inputMap);
 	public List<UserVO> getUserListExcept(Integer userId);
 	public void updateProduct(Long productId, DealDetailsVO dealDetailsVO);
+	public List<DealDetailsVO> getFreeTextSearch(String freeSeachText);
 	
 }

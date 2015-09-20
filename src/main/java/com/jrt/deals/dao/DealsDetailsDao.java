@@ -11,7 +11,6 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.jrt.deals.utils.Mocker;
 import com.jrt.deals.utils.SHAHashing;
 import com.jrt.deals.utils.SQLConstants;
 import com.jrt.deals.vo.DealDetailsVO;
@@ -260,6 +259,50 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		log.debug("<-- findAllClearanceDeals");
 		return detailsVos;
 	}
+	
+	@Transactional(readOnly = true)
+	public List<DealDetailsVO> getFreeTextSearch(String freeSeachText) {
+		log.debug("--> getFreeTextSearch");
+		
+		List<DealDetailsVO> detailsVos = new ArrayList<DealDetailsVO>();
+		String where = consturctWhere(freeSeachText);
+		log.debug("where::"+where);
+		if(freeSeachText != null && !"".equals(freeSeachText.trim()) ){
+			String sql = SQLConstants.SELECT_FREE_TEXT_DEALS+" "+where;
+			log.debug("SQL::"+sql);
+			try {
+				List<Map<String, Object>> rows = getJdbcTemplate().queryForList(sql);
+				DealDetailsVO dealDetailsVO = null;
+				for (Map<String, Object> row : rows) {
+					dealDetailsVO = populateDealDetails(row);
+					detailsVos.add(dealDetailsVO);
+				}
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+	
+		log.debug("<-- getFreeTextSearch");
+		return detailsVos;
+	}
+
+	private String consturctWhere(String freeSeachText) {
+		String freeText ="";
+		if(freeSeachText != null && !"".equals(freeSeachText.trim()) ){
+			String[] array = freeSeachText.split(" ");
+			for(int index=0; index < array.length; index++){
+				freeText = freeText+ " UPPER(product_name) LIKE"+" '%"+array[index].toUpperCase()+"%'";
+				freeText = freeText+ " OR UPPER(product_details) LIKE"+" '%"+array[index].toUpperCase()+"%'";
+				freeText = freeText+ " OR UPPER(product_image_url) LIKE"+" '%"+array[index].toUpperCase()+"%'";
+				freeText = freeText+ " OR UPPER(product_deal_url) LIKE"+" '%"+array[index].toUpperCase()+"%'";
+				if(index != array.length-1){
+					freeText = freeText+" OR ";
+				}
+			}
+		
+		}
+		return freeText+ " order by product_display_order asc";
+	}
 
 	@Transactional(readOnly = true)
 	public List<DealDetailsVO> findAllTravelDeals() {
@@ -347,5 +390,6 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		log.debug("<-- updateProduct");
 		
 	}
+
 
 }

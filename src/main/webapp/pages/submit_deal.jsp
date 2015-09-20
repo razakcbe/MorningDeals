@@ -58,7 +58,7 @@ $(function() {
 <input type="url" name="imageURL" id="imageURL" placeholder="Image URL.." autocomplete="off" tabindex="3" class="txtinput" required/>
 <input type="url" name="destinationURL" id="destinationURL" placeholder="Destination URL" autocomplete="off" tabindex="4" class="txtinput" required/>
 <select name="categoryId" id="categoryId" tabindex="5" class="cmbselect">
-                                    <option value="0">Select Your Product...</option>
+                                    <option value="0">Select Your Category...</option>
                                     <optgroup label="Electronics">
                                             <option value="10001">Mobile Accessories</option>
                                             <option value="10002">Laptops</option>
@@ -174,7 +174,7 @@ $(function() {
 <input type="radio" name="hotdealsid" id="hotdealsno" value="N" autocomplete="off" tabindex="11" checked="checked"/> No
 </div>
 <div id="radiobtn_middle">
-<label for="hotdeals">Popular Deals:</label>&nbsp;
+<label for="hotdeals">Travel Deals:</label>&nbsp;
 <input type="radio" name="populardealsid" id="populardealsyes" value="Y" autocomplete="off" tabindex="12"/>Yes&nbsp;
 <input type="radio" name="populardealsid" id="populardealsno" value="N" autocomplete="off" tabindex="13" checked="checked"/> No
 </div>
