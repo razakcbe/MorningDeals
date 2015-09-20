@@ -113,11 +113,14 @@ public class DealsDetailsController {
 		return "productDesc";
 	}
 	@RequestMapping(value = "cupons", method = RequestMethod.GET)
-	public ModelAndView getCupons() {
+	public String getCupons(Model model) {
 		log.debug("--> getCupons");
-		ModelAndView model = new ModelAndView("home");
+		List<DealDetailsVO> dealDetailsVOs = dealsDetailsService.findAllCuponDeals();
+		List<DealDetailsVO> topDealDetailsVOs = dealsDetailsService.findTopDeals();
+		model.addAttribute("allDeals", dealDetailsVOs);
+		model.addAttribute("topDeals", topDealDetailsVOs);		
 		log.debug("<-- getCupons");
-		return model;
+		return "home";
 	}
 	
 	@RequestMapping(value = "clearanceDeals", method = RequestMethod.GET)

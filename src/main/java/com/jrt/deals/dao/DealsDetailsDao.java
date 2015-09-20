@@ -261,6 +261,27 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 	}
 	
 	@Transactional(readOnly = true)
+	public List<DealDetailsVO> findAllCuponDeals() {
+		log.debug("--> findAllCuponDeals");
+		log.debug("Query: " + SQLConstants.SELECT_ALL_CUPON_DEALS);
+		List<DealDetailsVO> detailsVos = new ArrayList<DealDetailsVO>();
+		try {
+			List<Map<String, Object>> rows = getJdbcTemplate().queryForList(
+					SQLConstants.SELECT_ALL_CUPON_DEALS);
+			DealDetailsVO dealDetailsVO = null;
+			for (Map<String, Object> row : rows) {
+				dealDetailsVO = populateDealDetails(row);
+				detailsVos.add(dealDetailsVO);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		log.debug("<-- findAllCuponDeals");
+		return detailsVos;
+	}
+	
+	
+	@Transactional(readOnly = true)
 	public List<DealDetailsVO> getFreeTextSearch(String freeSeachText) {
 		log.debug("--> getFreeTextSearch");
 		
@@ -390,6 +411,4 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		log.debug("<-- updateProduct");
 		
 	}
-
-
 }

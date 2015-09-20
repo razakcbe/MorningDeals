@@ -145,4 +145,11 @@ public class DealsDetailsService {
 		log.debug("<-- updateProduct");
 	}
 
+	public List<DealDetailsVO> findAllCuponDeals() {
+		log.debug("--> findAllCuponDeals");
+		List<DealDetailsVO> dealDetailsVOList = dealsDetailsDao.findAllCuponDeals();
+		log.debug("<-- findAllCuponDeals");
+		return dealDetailsVOList;
+	}
+
 }

@@ -25,5 +25,6 @@ public interface IDealsDetailsDao {
 	public List<UserVO> getUserListExcept(Integer userId);
 	public void updateProduct(Long productId, DealDetailsVO dealDetailsVO);
 	public List<DealDetailsVO> getFreeTextSearch(String freeSeachText);
+	public List<DealDetailsVO> findAllCuponDeals();
 	
 }
