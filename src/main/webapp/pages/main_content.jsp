@@ -146,8 +146,7 @@
 			<div class="close"><a href="#" class="simplemodal-close">x</a></div>
 			<div id="osx-modal-data">
 
-				<p>Your Deal is Successfully Uploaded... </p>
-                				<h2>Thanks for Submitting Deal...</h2>
+				<p>${message }</p>
 				<p><button class="simplemodal-close">Close</button> <span>(or press ESC or click the overlay)</span></p>
 			</div>
 		</div><!--- Modal Contetn End --->

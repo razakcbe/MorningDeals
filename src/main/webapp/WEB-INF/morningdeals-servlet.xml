@@ -15,7 +15,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
 http://www.springframework.org/schema/aop
 http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
-	<context:property-placeholder location="classpath:appconfig.properties" />
+	<context:property-placeholder location="classpath:appconfig-local.properties" />
 	<context:annotation-config />
 	<context:component-scan base-package="com.jrt" />
 	<mvc:annotation-driven />

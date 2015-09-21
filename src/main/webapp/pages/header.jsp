@@ -39,7 +39,7 @@
 			<a href="login">Login / Register</a>
 		</c:if>
 		<c:if test="${not empty userVO}">
-			Welcome, ${userVO.userName}  <span class="icon-share-alt"></span> <a href="login">Logout</a>
+			Welcome, ${userVO.userName}  <span class="icon-share-alt"></span> <a href="logout">Logout</a>
 		</c:if>
 		</div>
 	</div>

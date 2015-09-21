@@ -118,8 +118,7 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 	public List<DealDetailsVO> findDealsByCategory(Long long1) {
 		log.debug("--> findDealsByCategory");
 		List<DealDetailsVO> detailsVos = new ArrayList<DealDetailsVO>();
-		String sql = SQLConstants.SELECT_DEALS_BY_CAT.replace("?",
-				long1.toString());
+		String sql = getCateSQL(long1);
 		log.debug("sql: " + sql);
 		List<Map<String, Object>> rows = getJdbcTemplate().queryForList(sql);
 		DealDetailsVO dealDetailsVO = null;
@@ -135,6 +134,26 @@ public class DealsDetailsDao extends JdbcDaoSupport implements IDealsDetailsDao 
 		log.debug("<-- findDealsByCategory");
 		return detailsVos;
 
+	}
+	
+	private String getCateSQL(Long long1){
+		String sql = SQLConstants.SELECT_DEALS_BY_CAT.replace("?",long1.toString());
+		if(long1 == 20001){
+			sql = SQLConstants.SELECT_DEALS_BY_CAT_IN.replace("?",SQLConstants.subSql2001);
+		}else if(long1 == 20002){
+			sql = SQLConstants.SELECT_DEALS_BY_CAT_IN.replace("?",SQLConstants.subSql2002);
+		}else if(long1 == 20003){
+			sql = SQLConstants.SELECT_DEALS_BY_CAT_IN.replace("?",SQLConstants.subSql2003);
+		}else if(long1 == 20004){
+			sql = SQLConstants.SELECT_DEALS_BY_CAT_IN.replace("?",SQLConstants.subSql2004);
+		}else if(long1 == 20005){
+			sql = SQLConstants.SELECT_DEALS_BY_CAT_IN.replace("?",SQLConstants.subSql2005);
+		}else if(long1 == 20006){
+			sql = SQLConstants.SELECT_DEALS_BY_CAT_IN.replace("?",SQLConstants.subSql2006);
+		}else if(long1 == 20007){
+			sql = SQLConstants.SELECT_DEALS_BY_CAT_IN.replace("?",SQLConstants.subSql2007);
+		}
+		return sql;
 	}
 
 	private DealDetailsVO populateDealDetails(Map<String, Object> row) {

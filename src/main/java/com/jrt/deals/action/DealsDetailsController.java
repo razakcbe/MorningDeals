@@ -313,6 +313,16 @@ public class DealsDetailsController {
 		return retunrStr;
 	}
 	
+	@RequestMapping(value = "logout", method = RequestMethod.GET)
+	public String logout(Model model,@RequestParam Map<String,String> allRequestParams,HttpServletRequest request) {
+		log.debug("--> logout");
+		String retunrStr = "logout";		 
+		request.getSession().invalidate();
+		model.asMap().clear();
+
+		log.debug("<-- logout");
+		return retunrStr;
+	}
 	@RequestMapping(value = "createProductAdmin", method = RequestMethod.POST)
 	public String createDealByAdmin(Model model,@RequestParam Map<String,String> allRequestParams,HttpServletRequest request) {
 		log.debug("--> createDealByAdmin:"+allRequestParams);

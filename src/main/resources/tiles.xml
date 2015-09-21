@@ -51,8 +51,13 @@
 		<put-attribute name="title" value=""></put-attribute>
 		<put-attribute name="body" value=""></put-attribute>
 	</definition>
-	<definition name="login" extends="base1.definition">
+	<definition name="login" extends="base.definition">
 		<put-attribute name="title" value="Login - Morning Deals"></put-attribute>
+		<put-attribute name="body" value="/pages/login.jsp"></put-attribute>
+	</definition>
+	<definition name="logout" extends="base.definition">
+		<put-attribute name="title" value="Login - Morning Deals"></put-attribute>
+		<put-attribute name="header" value="/pages/header.jsp"></put-attribute>
 		<put-attribute name="body" value="/pages/login.jsp"></put-attribute>
 	</definition>
 	<definition name="newproduct" extends="base1.definition">
